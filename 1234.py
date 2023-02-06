@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-
+import time
 
 ledpin1 =21
 
@@ -11,7 +11,7 @@ GPIO.setwarnings(False)
 GPIO.setup(ledpin1, GPIO.OUT)
 
 
-#df
+
 while(1):
     GPIO.output(ledpin1,1)
     time.sleep(1)
