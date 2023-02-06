@@ -11,12 +11,13 @@ GPIO.setwarnings(False)
 GPIO.setup(ledpin1, GPIO.OUT)
 
 
-
+#df
 while(1):
     GPIO.output(ledpin1,1)
     time.sleep(1)
     GPIO.output(ledpin1, 0)
     time.sleep(1)
+    
 
 
 
