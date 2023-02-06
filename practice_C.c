@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <wiringPi.h>
 
+
+int LED_BUILTIN = 
 int main(){
 
-    
+    wiringPiSetupGpio();
    pinMode(LED_BUILTIN, OUTPUT);
 
 
