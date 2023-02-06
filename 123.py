@@ -1,6 +1,6 @@
-import RPI.GPIO as GPIO
+import RPi.GPIO as GPIO
 
-led_pin =18
+led_pin =21
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
