@@ -11,3 +11,14 @@ pwm = GPIO.PWM(led_pin, 10.0)
 
 pwm.start(50.0)
 
+
+try:
+    while True:
+        pass
+
+except KeyboardInterrupt:
+    pass
+
+pwm.stop()
+GPIO.cleanup()
+
