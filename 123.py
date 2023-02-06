@@ -7,18 +7,18 @@ GPIO.setwarnings(False)
 
 GPIO.setup(led_pin, GPIO.OUT)
 
-pwm = GPIO.PWM(led_pin, 10.0)
+#pwm = GPIO.PWM(led_pin, 10.0)
+GPIO.output(led_pin,1)
 
-pwm.start(50.0)
+#pwm.start(50.0)
 
 
-try:
-    while True:
-        pass
+#try:
+    #while True:
+        #pass
 
-except KeyboardInterrupt:
-    pass
+#except KeyboardInterrupt:
+    #pass
 
-pwm.stop()
-GPIO.cleanup()
-
+#pwm.stop()
+#GPIO.cleanup()
