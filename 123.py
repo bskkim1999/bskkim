@@ -3,6 +3,7 @@ import RPI.GPIO as GPIO
 led_pin =18
 
 GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
 
 GPIO.setup(led_pin, GPIO.OUT)
 
