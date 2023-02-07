@@ -10,7 +10,7 @@
 
 #define MAXTIMINGS     85
 
-#define DHTPIN         21
+#define DHTPIN        7
 
 int dht11_dat[5] = { 0, 0, 0, 0, 0 };
 
@@ -147,10 +147,10 @@ int main( void )
 {
 
            printf( "Raspberry Pi wiringPi DHT11 Temperature test program\n" );
-            wiringPiSetupGpio();
-           //if ( wiringPiSetup() == -1 )
+            //wiringPiSetupGpio();
+           if ( wiringPiSetup() == -1 )
 
-                     // exit( 1 );
+                      exit( 1 );
 
            while ( 1 )
 
