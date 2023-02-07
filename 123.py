@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-
+import time
 
 
 
@@ -8,5 +8,6 @@ GPIO.setwarnings(False)
 
 
 
-
-print("hello~~")
+while(1)
+    print("hello~~")
+    time.sleep(1)
