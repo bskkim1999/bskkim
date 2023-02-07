@@ -13,7 +13,7 @@ int main(){
         
         digitalWrite(LED_board, HIGH);
         delay(500);
-        printf("hello");
+        printf("hello\n");
         digitalWrite(LED_board, LOW);
         delay(500);
         
