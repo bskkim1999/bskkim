@@ -6,7 +6,7 @@
 #include <unistd.h>
 
 #define MAX_TIME 100
-#define DHT11PIN 21
+#define DHT11PIN 16
 //~ #define DHT11PIN 25
 
 int dht11_val[5] = {0,0,0,0,0};
