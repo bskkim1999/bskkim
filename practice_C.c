@@ -4,7 +4,7 @@
 
 int LED_board = 21;
 int main(){
-
+    wiringPiSetupGpio();
    pinMode(LED_board, OUTPUT);
 
    while(1){
