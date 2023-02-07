@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <wiringPi.h>
+//#include <wiringPi.h>
 
 
 int LED_board = 11;
