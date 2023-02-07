@@ -5,7 +5,7 @@
 int LED_board = 21;
 
 int main(){
-    wiringPiSetupGpio();
+    wiringPiSetupGpio();  //BCM기준으로 핀이 바뀜
    pinMode(LED_board, OUTPUT);
 
    while(1){
