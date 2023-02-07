@@ -1,4 +1,4 @@
-#include <WiringPi.h>
+#include <wiringPi.h>
 #include <stdio.h>
 
 
