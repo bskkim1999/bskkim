@@ -2,11 +2,23 @@
 #include <stdio.h>
 
 
-//int LED_board = 11;
+int LED_board = 21;
+
+
 
 int main(){
 
-   printf("hello~~!!");
+   pinMode(LED_board, OUTPUT);
+
+   while(1){
+
+        digitalWrite(LED_board, HIGH);
+        delay(500);
+        digitalWrite(LED_board, LOW);
+        delay(500);
+
+
+   }
                       
 
     return 0;
