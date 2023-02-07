@@ -13,14 +13,9 @@ GPIO.setup(ledpin1, GPIO.OUT)
 
 
 while(1):
-    GPIO.output(ledpin1,1)
+    GPIO.output(ledpin1, 1)
     time.sleep(1)
     GPIO.output(ledpin1, 0)
     time.sleep(1)
     
-
-
-
-
-
 
