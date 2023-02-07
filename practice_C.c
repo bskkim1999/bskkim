@@ -3,6 +3,7 @@
 
 
 int LED_board = 21;
+
 int main(){
     wiringPiSetupGpio();
    pinMode(LED_board, OUTPUT);
@@ -12,6 +13,7 @@ int main(){
         
         digitalWrite(LED_board, HIGH);
         delay(500);
+        printf("hello");
         digitalWrite(LED_board, LOW);
         delay(500);
         
