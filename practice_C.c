@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <wiringPi.h>
 
-int LED_board = 21;
+
 
 
 
@@ -17,7 +17,7 @@ int main(){
         digitalWrite(LED_board, LOW);
         delay(500);
         */
-       Serial.print("hello");
+       printf("hello");
         delay(1000);
    }
                       
