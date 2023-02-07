@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-ledpin1 =21
+ledpin1 =20
 
 
 
