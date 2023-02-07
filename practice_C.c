@@ -17,7 +17,7 @@ int main(){
         digitalWrite(LED_board, LOW);
         delay(500);
         */
-       printf("hello");
+       Serial.print("hello");
         delay(1000);
    }
                       
