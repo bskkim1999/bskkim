@@ -6,7 +6,7 @@ ledpin1 =21
 
 
 GPIO.setmode(GPIO.BCM)
-#GPIO.setwarnings(False)
+GPIO.setwarnings(False)
 
 GPIO.setup(ledpin1, GPIO.OUT)
 
