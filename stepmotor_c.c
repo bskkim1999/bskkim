@@ -81,7 +81,7 @@ int main(void)
             
             backward(2,520);
             delay(1000);
-            printf("clockwise\n");
+            printf("counterclockwise\n");
         //}
 
     return 0;
