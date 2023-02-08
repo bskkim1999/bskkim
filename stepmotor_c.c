@@ -78,7 +78,7 @@ int main(void)
             forward(2,530);   //(속도, 스텝 수)
             delay(1000);
             backward(2,540);
-          / delay(1000);
+            delay(1000);
         //}
 
     return 0;
