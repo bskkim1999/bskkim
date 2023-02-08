@@ -20,6 +20,7 @@ int dht11_dat[5] = { 0, 0, 0, 0, 0 };
 void read_dht11_dat()
 
 {
+            
 
            uint8_t laststate  = HIGH;
 
@@ -158,9 +159,12 @@ void read_dht11_dat()
 int main( void )
 
 {
+          //LED Setup
+          pinMode(LED, OUTPUT);
 
-           printf( "Raspberry Pi wiringPi DHT11 Temperature test program\n" );
-            wiringPiSetupGpio();
+          printf( "Raspberry Pi wiringPi DHT11 Temperature test program\n" );
+          wiringPiSetupGpio();
+
           // if ( wiringPiSetup() == -1 )
 
              //         exit( 1 );
