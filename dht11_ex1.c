@@ -136,12 +136,12 @@ void read_dht11_dat()
                     //만약 습도가  20 이하이면 LED ON.
                     if(dht11_dat[0]<=20){
                         digitalWrite(LED, HIGH);
-                        print("ON!!\n");
+                        printf("ON!!\n");
                     }
 
                     else{
                         digitalWrite(LED, LOW);
-                        print("OFF!!\n");
+                        printf("OFF!!\n");
                     }
 
            }
