@@ -57,7 +57,7 @@ int main(void)
         wiringPiSetupGpio();
         for(;;)
         {
-            forward(5,10);
+            forward(2,10);
           //  delay(1000);
           //  backward(50,10);
           //  delay(1000);
