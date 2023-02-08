@@ -18,23 +18,33 @@ void setsteps(int w1, int w2, int w3, int w4)
          pinMode(OUT4,OUTPUT);
          digitalWrite(OUT4,w4);
      }
-
+//clockwise
  void forward (int del,int steps)
      {
           int i;
+          
           for(i=0;i<=steps;i++)
           {
-                  setsteps(1,1,0,0);
-                  delay(del);
-                  setsteps(0,1,1,0);
-                  delay(del);
-                  setsteps(0,0,1,1);
-                  delay(del);
-                  setsteps(1,0,0,1);
-                  delay(del);
-          }
-      }
+                setsteps(1,1,0,0);
+                delay(del);
+                printf("a\n");
 
+                setsteps(0,1,1,0);
+                delay(del);
+                printf("b\n");
+
+                setsteps(0,0,1,1);
+                delay(del);
+                printf("c\n");
+
+                setsteps(1,0,0,1);
+                delay(del);
+                printf("d\n");
+
+          }
+
+      }
+//counterclockwise
 void backward (int del,int steps)
       {
            int k;
@@ -42,12 +52,16 @@ void backward (int del,int steps)
            {
                    setsteps(1,0,0,1);
                    delay(del);
+
                    setsteps(0,0,1,1);
                    delay(del);
+
                    setsteps(0,1,1,0);
                    delay(del);
+
                    setsteps(1,1,0,0);
                    delay(del);
+
            }
       }
 
@@ -56,13 +70,13 @@ int main(void)
     //if(wiringPiSetup() == -1)
     //return 1;
         wiringPiSetupGpio();
-        for(;;)
-        {
-            forward(2,3);   //(속도, 바퀴 수)
+        //for(;;)
+        //{
+            forward(10,100);   //(속도, ???)
           //  delay(1000);
           //  backward(50,10);
           //  delay(1000);
-        }
+        //}
 
     return 0;
 }
