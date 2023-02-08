@@ -159,11 +159,13 @@ void read_dht11_dat()
 int main( void )
 
 {
-          //LED Setup
-          pinMode(LED, OUTPUT);
+          
 
           printf( "Raspberry Pi wiringPi DHT11 Temperature test program\n" );
           wiringPiSetupGpio();
+
+          //LED Setup
+          pinMode(LED, OUTPUT);
 
           // if ( wiringPiSetup() == -1 )
 
