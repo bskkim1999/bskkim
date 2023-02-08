@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <wiringPi.h>
 
-//실험결과, steps = 140 (약 90도) 이므로 한바퀴는 140*4=560 =stemps 이다.
+//실험결과, 한바퀴 = 520(steps)이다. 
 
 
 //핀은 순서대로 장착
@@ -75,9 +75,9 @@ int main(void)
         wiringPiSetupGpio();
         //for(;;)
         //{
-            forward(2,525);   //(속도, 스텝 수)
+            forward(2,520);   //(속도, 스텝 수)
             delay(1000);
-            backward(2,520);
+            backward(2,520/4);
             delay(1000);
         //}
 
