@@ -77,8 +77,11 @@ int main(void)
         //{
             forward(2,520);   //(속도, 스텝 수)
             delay(1000);
-            backward(2,520/4);
+            printf("clockwise\n");
+            
+            backward(2,520);
             delay(1000);
+            printf("clockwise\n");
         //}
 
     return 0;
