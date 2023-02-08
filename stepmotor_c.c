@@ -75,10 +75,10 @@ int main(void)
         wiringPiSetupGpio();
         //for(;;)
         //{
-            forward(10,560);   //(속도, 스텝 수)
-          //  delay(1000);
-          //  backward(50,10);
-          //  delay(1000);
+            forward(2,530);   //(속도, 스텝 수)
+            delay(1000);
+            backward(2,540);
+          / delay(1000);
         //}
 
     return 0;
