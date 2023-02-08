@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <wiringPi.h>
 
+//핀은 순서대로 장착
 #define OUT1 12    
 #define OUT2 16     
 #define OUT3 20      
@@ -55,13 +56,13 @@ int main(void)
     //if(wiringPiSetup() == -1)
     //return 1;
         wiringPiSetupGpio();
-        for(;;)
-        {
-            forward(2,10);
+        //for(;;)
+       // {
+            forward(2,5);   //(속도, 바퀴 수)
           //  delay(1000);
           //  backward(50,10);
           //  delay(1000);
-        }
+       // }
 
     return 0;
 }
