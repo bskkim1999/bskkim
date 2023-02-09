@@ -77,7 +77,7 @@ int main(void)
         wiringPiSetupGpio();
         //for(;;)
         //{
-            printf(write an angle and direction:);
+            printf("write an angle and direction:");
             scanf("%d %d", &angle, &direction);
             
             //clockwise
