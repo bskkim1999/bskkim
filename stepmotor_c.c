@@ -79,7 +79,7 @@ int main(void)
             int angle=0;
             int direction=0;
 
-            printf("write an angle and direction:");
+            printf("write an angle and direction(CW=1 OR CCW=-1):");
             scanf("%d %d", &angle, &direction);
             
             //clockwise
