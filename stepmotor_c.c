@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <wiringPi.h>
 
-//실험결과, 한바퀴 = 520(steps)이다. 
+//실험결과, 한바퀴 = 520(steps)이다. 1도 = 약 1.4444step 이다.
 
 
 //핀은 순서대로 장착
@@ -72,16 +72,28 @@ int main(void)
 {
     //if(wiringPiSetup() == -1)
     //return 1;
+        int angle=0;
+        int direction=0;
         wiringPiSetupGpio();
         //for(;;)
         //{
-            forward(2,520);   //(속도, 스텝 수)
-            delay(1000);
-            printf("clockwise\n");
+            printf(write an angle and direction:);
+            scanf("%d %d", &angle, &direction);
             
-            backward(2,520);
-            delay(1000);
-            printf("counterclockwise\n");
+            //clockwise
+            if(direction==1){
+                forward(2,1.4444*angle);   //(속도, 스텝 수)
+                delay(1000);
+                printf("clockwise\n");
+            }
+            //counterclockwise
+            else if(direction==-1){
+                backward(2,1.4444*angle);   //(속도, 스텝 수)
+                delay(1000);
+                printf("counterclockwise\n");
+            }
+            
+            
         //}
 
     return 0;
