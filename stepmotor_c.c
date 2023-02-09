@@ -72,29 +72,37 @@ int main(void)
 {
     //if(wiringPiSetup() == -1)
     //return 1;
-        int angle=0;
-        int direction=0;
+        
         wiringPiSetupGpio();
-        //for(;;)
-        //{
+        
+        while(1){
+            int angle=0;
+            int direction=0;
+
             printf("write an angle and direction:");
             scanf("%d %d", &angle, &direction);
             
             //clockwise
             if(direction==1){
-                forward(2,1.4444*angle);   //(속도, 스텝 수)
+                forward(2, 1.4444*angle);   //(속도, 스텝 수)
                 delay(1000);
                 printf("clockwise\n");
             }
             //counterclockwise
             else if(direction==-1){
-                backward(2,1.4444*angle);   //(속도, 스텝 수)
+                backward(2, 1.4444*angle);   //(속도, 스텝 수)
                 delay(1000);
                 printf("counterclockwise\n");
             }
+
+            else{
+                printf("please write direction again!!!!!");
+            }
+        }
+           
             
             
-        //}
+       
 
     return 0;
 }
