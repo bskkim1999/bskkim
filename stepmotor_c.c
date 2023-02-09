@@ -83,14 +83,14 @@ int main(void)
             scanf("%d %d", &angle, &direction);
             
             //clockwise
-            if(direction==1){
-                forward(2, 1.4444*angle);   //(속도, 스텝 수)
+            if(direction==1 && angle>0){
+                forward(2, 1.4444*angle);   //#(속도, 스텝 수)#
                 delay(1000);
                 printf("clockwise\n");
             }
             //counterclockwise
-            else if(direction==-1){
-                backward(2, 1.4444*angle);   //(속도, 스텝 수)
+            else if(direction==-1 && angle>0){
+                backward(2, 1.4444*angle);   //#(속도, 스텝 수)#
                 delay(1000);
                 printf("counterclockwise\n");
             }
