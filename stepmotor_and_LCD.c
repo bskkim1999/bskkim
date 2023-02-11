@@ -73,6 +73,7 @@ int main(void)
             //clockwise
             if(direction==1 && angle>0){
                 ClrLcd();
+                delay(500);
                 typeln("WORKING...");
                 forward(2, 1.4444*angle);   //#(속도, 스텝 수)#
                 
@@ -84,11 +85,12 @@ int main(void)
                 lcdLoc(LINE2);
                 typeln("clockwise");
 
-                delay(1000);
+                delay(10000);
             }
             //counterclockwise
             else if(direction==-1 && angle>0){
                 ClrLcd();
+                delay(500);
                 typeln("WORKING...");
                 backward(2, 1.4444*angle);   //#(속도, 스텝 수)#
                 
@@ -100,7 +102,7 @@ int main(void)
                 lcdLoc(LINE2);
                 typeln("clockwise");
 
-                delay(1000);
+                delay(10000);
             }
 
             else{
