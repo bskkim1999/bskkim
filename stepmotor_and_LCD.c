@@ -92,7 +92,7 @@ int main(void)
                 lcdLoc(LINE1);
                 typeInt(angle);
 
-                lcdLoc(LINE2)
+                lcdLoc(LINE2);
                 typeln("clockwise");
 
                 delay(1000);
