@@ -76,7 +76,7 @@ int main(void)
                 printf("clockwise\n");
                 
                 lcdLoc(LINE1);
-                typeln(angle);
+                typeINT(angle);
 
                 lcdLoc(LINE2)
                 typeln("clockwise");
@@ -90,7 +90,7 @@ int main(void)
                 printf("counterclockwise\n");
 
                 lcdLoc(LINE1);
-                typeln(angle);
+                typeINT(angle);
 
                 lcdLoc(LINE2)
                 typeln("clockwise");
