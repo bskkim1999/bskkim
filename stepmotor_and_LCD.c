@@ -67,10 +67,12 @@ int main(void)
             int direction=0;
 
             printf("write an angle and direction(CW=1 OR CCW=-1):");
+            typeln("WAIT...");
             scanf("%d %d", &angle, &direction);
             
             //clockwise
             if(direction==1 && angle>0){
+                typeln("WORKING...");
                 forward(2, 1.4444*angle);   //#(속도, 스텝 수)#
                 
                 printf("clockwise\n");
@@ -85,6 +87,7 @@ int main(void)
             }
             //counterclockwise
             else if(direction==-1 && angle>0){
+                typeln("WORKING...");
                 backward(2, 1.4444*angle);   //#(속도, 스텝 수)#
                 
                 printf("counterclockwise\n");
