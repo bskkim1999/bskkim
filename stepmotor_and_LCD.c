@@ -78,6 +78,7 @@ int main(void)
                 forward(2, 1.4444*angle);   //#(속도, 스텝 수)#
                 
                 printf("clockwise\n");
+                ClrLcd();
                 
                 lcdLoc(LINE1);
                 typeInt(angle);
@@ -95,12 +96,13 @@ int main(void)
                 backward(2, 1.4444*angle);   //#(속도, 스텝 수)#
                 
                 printf("counterclockwise\n");
-
+                ClrLcd();
+                
                 lcdLoc(LINE1);
                 typeInt(angle);
 
                 lcdLoc(LINE2);
-                typeln("clockwise");
+                typeln("counterclockwise");
 
                 delay(10000);
             }
