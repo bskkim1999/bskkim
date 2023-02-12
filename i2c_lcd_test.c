@@ -29,6 +29,7 @@ void lcdLoc(int line); //move cursor
 void ClrLcd(void); // clr LCD return home
 void typeln(const char *s);
 void typeChar(char val);
+
 int fd;  // seen by all subroutines
 
 int main()   {
