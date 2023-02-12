@@ -2,7 +2,7 @@
 #include <wiringPi.h>
 #include <softPwm.h>
 
-const int pinServo = 21;
+const int pinServo = 17;
 
 int main(void)
 {
