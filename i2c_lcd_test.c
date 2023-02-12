@@ -38,7 +38,7 @@ int main()   {
 
   fd = wiringPiI2CSetup(I2C_ADDR);
 
-  //printf("fd = %d ", fd);
+  //printf("fd = %d ", fd); 
 
   lcd_init(); // setup LCD
 
