@@ -2,7 +2,7 @@
 #include "Servo.h"
 
  
-int servoPin = ;
+int servoPin = 21;
 
 Servo servo; 
 
