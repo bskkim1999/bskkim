@@ -14,12 +14,7 @@ int main(void)
 	{
 		softPwmWrite(pinServo, 5);
 		delay(1000);
-		softPwmWrite(pinServo, 15);
-		delay(1000);
-		softPwmWrite(pinServo, 25);
-		delay(1000);
-		softPwmWrite(pinServo, 15);
-		delay(1000);
+		
 	}
 	return 0;
 }
