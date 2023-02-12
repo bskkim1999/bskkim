@@ -1,5 +1,5 @@
 #include <wiringPi.h>
-#include "Servo.h"
+#include "servo.h"
 
  
 int servoPin = 21;
