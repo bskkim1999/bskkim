@@ -5,7 +5,7 @@ servoPin          = 12   # 서보 핀
 SERVO_MAX_DUTY    = 12   # 서보의 최대(180도) 위치의 주기
 SERVO_MIN_DUTY    = 3    # 서보의 최소(0도) 위치의 주기
 
-GPIO.setmode(GPIO.BOARD)        # GPIO 설정
+GPIO.setmode(GPIO.BCM)        # GPIO 설정
 GPIO.setup(servoPin, GPIO.OUT)  # 서보핀 출력으로 설정
 
 servo = GPIO.PWM(servoPin, 50)  # 서보핀을 PWM 모드 50Hz로 사용하기 (50Hz > 20ms)
