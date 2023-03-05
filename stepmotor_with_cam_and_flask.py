@@ -79,7 +79,13 @@ app = Flask(__name__)               # 플라스크 앱 생성
 
 @app.route('/')                     # 기본('/') 웹주소로 요청이 오면                     
 def hello():                        #hello 함수 실행
-    return "change url for control stepmotor!"
+    print("change url for control stepmotor!")
+    print("/cw : clockwise")
+    print("/ccw : counterclockwise") 
+    print("/clean : gpio cleanup()") 
+    print("/start : gpio startup()") 
+    
+    return None
 
 @app.route('/cw')
 def cw():
