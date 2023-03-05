@@ -17,41 +17,41 @@ def setsteps(w1, w2, w3, w4) :
 
 
 #clockwise
-def forward (del,steps) :
+def forward (delay,steps) :
     i=0
     
     for i in range(steps) :
           
         setsteps(1,1,0,0)
-        time.sleep(del)
+        time.sleep(delay)
 
         setsteps(0,1,1,0)
-        time.sleep(del)
+        time.sleep(delay)
 
         setsteps(0,0,1,1)
-        time.sleep(del)
+        time.sleep(delay)
                 
         setsteps(1,0,0,1)
-        time.sleep(del)
+        time.sleep(delay)
                 
 
 #counterclockwise
-def backward (del,steps) :
+def backward (delay,steps) :
 
     k=0
     for k in range(steps) :
            
         setsteps(1,0,0,1)
-        time.sleep(del)
+        time.sleep(delay)
 
         setsteps(0,0,1,1)
-        time.sleep(del)          
+        time.sleep(delay)          
 
         setsteps(0,1,1,0)
-        time.sleep(del)          
+        time.sleep(delay)          
 
         setsteps(1,1,0,0)
-        time.sleep(del)
+        time.sleep(delay)
            
 
 
@@ -83,13 +83,13 @@ while True:
             
         #clockwise
         if direction==1 and angle>0 :
-            forward(2, 1.4444*angle)   //#(속도, 스텝 수)
+            forward(0.002, 1.4444*angle)   //#(속도, 스텝 수)
             time.sleep(1)
             print("clockwise")
         
         #counterclockwise
         elif direction==-1 and angle>0 :
-            backward(2, 1.4444*angle)   //#(속도, 스텝 수)
+            backward(0.002, 1.4444*angle)   //#(속도, 스텝 수)
             time.sleep(1)
             print("counterclockwise")
         
