@@ -83,13 +83,13 @@ while True:
             
         #clockwise
         if direction==1 and angle>0 :
-            forward(0.002, 1.4444*angle)   //#(속도, 스텝 수)
+            forward(0.002, 1.4444*angle)   #(속도, 스텝 수)
             time.sleep(1)
             print("clockwise")
         
         #counterclockwise
         elif direction==-1 and angle>0 :
-            backward(0.002, 1.4444*angle)   //#(속도, 스텝 수)
+            backward(0.002, 1.4444*angle)   #(속도, 스텝 수)
             time.sleep(1)
             print("counterclockwise")
         
