@@ -75,11 +75,12 @@ def cleanup():
 while True:
     try :    
        
-        angle=0
-        direction=0
+        #angle=0
+        #direction=0
 
         angle, direction = input("write an angle and direction(CW=1 OR CCW=-1):").split(" ")
-        
+        angle = float(angle)
+        direction = int(direction)
             
         #clockwise
         if direction==1 and angle>0 :
