@@ -74,29 +74,32 @@ def cleanup():
 
 #========================================main task======================================
 
-while True:
-    try :    
-        app = Flask(__name__)               # 플라스크 앱 생성
-        
-        if __name__ == '__main__':          # 현재 파일 실행시 개발용 웹서버 구동
-            app.run(debug=True, port=8083, host='172.30.1.54') 
 
-        
+try :    
+    app = Flask(__name__)               # 플라스크 앱 생성
 
-        @app.route('/')                     # 기본('/') 웹주소로 요청이 오면                     
-        def hello():                        #hello 함수 실행
-            return "change url for control stepmotor!"
+    if __name__ == '__main__':          # 현재 파일 실행시 개발용 웹서버 구동
+        app.run(debug=True, port=8083, host='172.30.1.54') 
 
-        @app.route('/cw')
-        def cw():
-            forward(0.002, 14.444)   #(속도, 스텝 수)
+    
 
-        @app.route('/ccw')
-        def ccw():
-            backward(0.002, 14.444)   #(속도, 스텝 수)
-        
-        
-    except KeyboardInterrupt:
+    @app.route('/')                     # 기본('/') 웹주소로 요청이 오면                     
+    def hello():                        #hello 함수 실행
+        return "change url for control stepmotor!"
+
+    @app.route('/cw')
+    def cw():
+        forward(0.002, 14.444)   #(속도, 스텝 수)
+
+    @app.route('/ccw')
+    def ccw():
+        backward(0.002, 14.444)   #(속도, 스텝 수)
+    
+    @app.route('/clean')
+    def clean():
         cleanup()
-        exit( 1 )
+    
+except KeyboardInterrupt:
+    cleanup()
+    exit( 1 )
 
