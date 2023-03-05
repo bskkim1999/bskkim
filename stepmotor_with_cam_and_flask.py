@@ -58,12 +58,13 @@ def backward (delay,steps) :
 
 
 # setting up
-GPIO.setmode( GPIO.BCM )
-GPIO.setwarnings(False)
-GPIO.setup( in1, GPIO.OUT )
-GPIO.setup( in2, GPIO.OUT )
-GPIO.setup( in3, GPIO.OUT )
-GPIO.setup( in4, GPIO.OUT )
+def startup():
+    GPIO.setmode( GPIO.BCM )
+    GPIO.setwarnings(False)
+    GPIO.setup( in1, GPIO.OUT )
+    GPIO.setup( in2, GPIO.OUT )
+    GPIO.setup( in3, GPIO.OUT )
+    GPIO.setup( in4, GPIO.OUT )
 
 def cleanup():
     GPIO.output( in1, 0 )
@@ -73,7 +74,7 @@ def cleanup():
     GPIO.cleanup()
 
 #========================================main task======================================
-
+startup()
 app = Flask(__name__)               # 플라스크 앱 생성
 
 @app.route('/')                     # 기본('/') 웹주소로 요청이 오면                     
@@ -91,6 +92,10 @@ def ccw():
 @app.route('/clean')
 def clean():
     cleanup()
+
+@app.route('/start')
+def start():
+    startup()
     
 if __name__ == '__main__':          # 현재 파일 실행시 개발용 웹서버 구동
     app.run(debug=True, port=8083, host='172.30.1.54')
