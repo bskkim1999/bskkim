@@ -19,7 +19,7 @@ def setsteps(w1, w2, w3, w4) :
 #clockwise
 def forward (delay,steps) :
     i=0
-    
+    steps = int(steps)
     for i in range(steps) :
           
         setsteps(1,1,0,0)
@@ -39,6 +39,7 @@ def forward (delay,steps) :
 def backward (delay,steps) :
 
     k=0
+    steps = int(steps)
     for k in range(steps) :
            
         setsteps(1,0,0,1)
