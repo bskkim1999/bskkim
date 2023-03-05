@@ -18,4 +18,4 @@ def b():                        #hello 함수 실행
     return 'Hello world2!!!!!'
 
 if __name__ == '__main__':          # 현재 파일 실행시 개발용 웹서버 구동
-    app.run(debug=True, port=99, host='172.30.1.35') 
+    app.run(debug=True, port=99, host='172.30.1.54') 
