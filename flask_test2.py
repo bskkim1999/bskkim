@@ -16,6 +16,9 @@ def hello():                        #hello 함수 실행
 @app.route('/on')
 def on():                        #on 함수 실행
     GPIO.output(ledpin1, 1)
+    time.sleep(1)
+    GPIO.output(ledpin1, 0)
+    time.sleep(1)
 
 
 @app.route('/off')
