@@ -4,13 +4,13 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 
-for ii in range(1,26):
+for ii in range(1,27):
     GPIO.setup(ii, GPIO.OUT)
 
 
 
 while True:
-    for i in range(1, 26):
+    for i in range(1, 27):
         GPIO.output(i, 1)
 
 
