@@ -8,7 +8,9 @@ for ii in range(1,25):
     GPIO.setup(ii, GPIO.OUT)
 
 
-for i in range(1, 25):
-    GPIO.output(i, 1)
+
+while True:
+    for i in range(1, 25):
+        GPIO.output(i, 1)
 
 
