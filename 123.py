@@ -7,7 +7,4 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 
-
-while(1):
-    print("hello~~")
-    time.sleep(1)
+GPIO.setup(ledpin1, GPIO.OUT)
