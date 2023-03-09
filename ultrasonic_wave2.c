@@ -28,14 +28,22 @@ int main (void){
     digitalWrite(trig, LOW) ;
 
     printf("a");
-    while (digitalRead(echo) == 0) ;
+    
+    while (digitalRead(echo) == 0) {
+        print("b")
+    }
 
     start_time = micros() ;
+    printf("%d", start_time);
 
-    while (digitalRead(echo) == 1) ;
-    printf("b");
+    while (digitalRead(echo) == 1){
+        print("c")
+    }
+
+    printf("d");
     end_time = micros() ;
-    printf("c");
+    printf("%d", end_time);
+    printf("e\n");
     distance = (end_time - start_time) / 29. / 2. ;
 
     printf("distance %.2f cm \n", distance) ;
