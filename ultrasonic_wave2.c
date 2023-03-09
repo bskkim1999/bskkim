@@ -3,7 +3,7 @@
 
 int main(void)
 {
-   float distance, start, stop;
+   float distance=0, start=0, stop=0;
     
     int echo = 20;
     int trig =21;
@@ -34,7 +34,7 @@ int main(void)
       printf("stop : %f \n", stop);
       printf("digitalreadecho: %d \n", digitalRead(echo)); 
       
-      delay(70);
+      delay(100);
   }
 
   return 0;
