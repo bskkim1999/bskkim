@@ -3,7 +3,7 @@
 
 int main(void )
 {
-   Float distance, start, stop;
+   float distance, start, stop;
 
     int echo = 20;
     int trig =21;
