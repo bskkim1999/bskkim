@@ -31,18 +31,18 @@ int main (void){
     
     while (digitalRead(echo) == 0) {
         printf("b");
-    }
-
+    
     start_time = micros() ;
     printf("%d", start_time);
+    }
 
     while (digitalRead(echo) == 1){
         printf("c");
-    }
 
-    printf("d");
     end_time = micros() ;
     printf("%d", end_time);
+    }
+
     printf("e\n");
     distance = (end_time - start_time) / 29. / 2. ;
 
