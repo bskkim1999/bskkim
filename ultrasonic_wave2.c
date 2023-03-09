@@ -14,8 +14,6 @@ int main(void)
    pinMode(echo, INPUT);                           // wiringPi GPIO 1번  = Python(BCM) 18번
 
   while(1) {
-         start = 0;
-         stop=0;
       digitalWrite(trig,0);                        // wiringPi 0번핀을 Low로 출력
       digitalWrite(trig,1);                        // wiringPi 0번핀을 High로 출력
       delayMicroseconds(10);                    // 10마이크로초 동안 멈춘다
