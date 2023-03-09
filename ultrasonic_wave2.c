@@ -38,9 +38,9 @@ int main (void){
     printf("c");
     distance = (end_time - start_time) / 29. / 2. ;
 
-    printf("distance %.2f cm\n", distance) ;
+    printf("distance %.2f cm \n", distance) ;
 
-    delay(1000);
+    delay(500);
   }
 
   return 0 ;
