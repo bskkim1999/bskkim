@@ -33,16 +33,16 @@ int main (void){
         printf("b\n");
     
         start_time = micros() ;
-        printf("%d\n", start_time);
+        printf("start_time : %d\n", start_time);
     }
 
     while (digitalRead(echo) == 1){
         printf("c\n");
 
         end_time = micros() ;
-        printf("%d\n", end_time);
+        printf("endtime : %d\n", end_time);
     }
-
+    delay(100)
     printf("e\n");
     distance = (end_time - start_time) / 29. / 2. ;
 
