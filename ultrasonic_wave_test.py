@@ -12,7 +12,7 @@ GPIO.setup(ECHO, GPIO.IN)
 
 GPIO.output(TRIG, 0)
 print("초음파 출력 초기화")
-time.sleep(1)
+time.sleep(0.5)
 
 try:
     while True:
@@ -22,16 +22,17 @@ try:
         
         GPIO.output(TRIG, 0)
         
-        while GPIO.input(ECHO)==0:
+        if GPIO.input(ECHO)==0:
             start = time.time()     # Echo핀 상승 시간값 저장
-            print("a")
             
-        while GPIO.input(ECHO)==1:
+            
+        if GPIO.input(ECHO)==1:
             stop = time.time()      # Echo핀 하강 시간값 저장
-            print("b")
+            
             
         check_time = stop - start
         distance = check_time * 34300 / 2
+        
         print("Distance : %.1f cm" % distance)
         #time.sleep(0.4)
         
