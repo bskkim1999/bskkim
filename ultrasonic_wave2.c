@@ -25,7 +25,7 @@ int main(void ){
             stop = micros();                       // 마이크로초 저장
 
         distance = (stop – start) / 58;           // 시간의 차이를 이용하여 거리를 도출한다
-        printf(“Distance=> %.2f cm \n”, distance);  
+        printf(“Dist : %.2f cm \n”, distance);  
         delay(1000);
     }
 
