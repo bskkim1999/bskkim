@@ -42,7 +42,7 @@ int main (void){
         end_time = micros() ;
         printf("endtime : %d\n", end_time);
     }
-    delay(100)
+    delay(100);
     printf("e\n");
     distance = (end_time - start_time) / 29. / 2. ;
 
