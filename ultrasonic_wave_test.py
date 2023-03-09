@@ -16,8 +16,12 @@ time.sleep(2)
 
 try:
     while True:
+        GPIO.output(TRIG,Low)
+        time.sleep(0.000002)
+        
         GPIO.output(TRIG,True)
         time.sleep(0.00001)        # 10uS의 펄스 발생을 위한 딜레이
+        
         GPIO.output(TRIG, False)
         
         while GPIO.input(ECHO)==0:
