@@ -24,17 +24,20 @@ try:
         
         if GPIO.input(ECHO)==0:
             start = time.time()     # Echo핀 상승 시간값 저장
+            print("a")
             
             
-        if GPIO.input(ECHO)==1:
+        elif GPIO.input(ECHO)==1:
             stop = time.time()      # Echo핀 하강 시간값 저장
+            print("b")
             
             
         check_time = stop - start
         distance = check_time * 34300 / 2
         
+        print("{}".format(check_time))
         print("Distance : %.1f cm" % distance)
-        #time.sleep(0.4)
+        time.sleep(5)
         
 except KeyboardInterrupt:
     print("거리 측정 완료 ")
