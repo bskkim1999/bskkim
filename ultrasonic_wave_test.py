@@ -30,7 +30,7 @@ try:
             print("a")
             
             
-        elif GPIO.input(ECHO)==1:
+        elif GPIO.input(ECHO)!=0:
             stop = time.time()      # Echo핀 하강 시간값 저장
             print("b")
             
