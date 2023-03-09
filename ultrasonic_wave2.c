@@ -13,7 +13,7 @@ int main (void){
 
 
   if (wiringPiSetup() == -1){
-    exit(1) ;
+        exit(1) ;
 
   } 
 
