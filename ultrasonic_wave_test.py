@@ -10,7 +10,7 @@ ECHO = 21
 GPIO.setup(TRIG, GPIO.OUT)
 GPIO.setup(ECHO, GPIO.IN)
 
-GPIO.output(TRIG, False)
+GPIO.output(TRIG, 0)
 print("초음파 출력 초기화")
 time.sleep(2)
 
@@ -22,7 +22,7 @@ try:
         GPIO.output(TRIG,1)
         time.sleep(0.00001)        # 10uS의 펄스 발생을 위한 딜레이
         
-        GPIO.output(TRIG, False)
+        GPIO.output(TRIG, 0)
         
         while GPIO.input(ECHO)==0:
             start = time.time()     # Echo핀 상승 시간값 저장
