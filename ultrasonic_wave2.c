@@ -40,7 +40,7 @@ int main (void){
 
     printf("distance %.2f cm\n", distance) ;
 
-    delay(1000)
+    delay(1000);
   }
 
   return 0 ;
