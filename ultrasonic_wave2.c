@@ -12,7 +12,7 @@ int main (void){
   float distance ;
 
 
-  if (wiringPiSetup() == -1){}
+  if (wiringPiSetup() == -1){
     exit(1) ;
 
   } 
