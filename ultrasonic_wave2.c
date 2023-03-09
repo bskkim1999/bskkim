@@ -36,7 +36,7 @@ int main(void)
       printf("stop : %f \n", stop);
       printf("digitalreadecho: %d \n", digitalRead(echo)); 
       
-      //delay(300);
+      delay(70);
   }
 
   return 0;
