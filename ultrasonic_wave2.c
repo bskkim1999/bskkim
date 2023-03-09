@@ -1,5 +1,5 @@
-#include <wiringPi.h>
 #include <stdio.h>
+#include <wiringPi.h>
 #include <stdlib.h>
 
 
@@ -24,13 +24,9 @@ int main (void){
   while(1) {
 
     digitalWrite(trig, LOW) ;
-
     delay(500) ;
-
     digitalWrite(trig, HIGH) ;
-
     delayMicroseconds(10) ;
-
     digitalWrite(trig, LOW) ;
 
     printf("a");
