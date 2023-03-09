@@ -14,6 +14,9 @@ GPIO.output(TRIG, 0)
 print("초음파 출력 초기화")
 time.sleep(0.5)
 
+start=0
+stop=0
+
 try:
     while True:
        
@@ -34,7 +37,7 @@ try:
             
         check_time = stop - start
         distance = check_time * 34300 / 2
-        
+
         print("{}".format(check_time))
         print("Distance : %.1f cm" % distance)
         time.sleep(5)
