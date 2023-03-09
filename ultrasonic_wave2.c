@@ -5,8 +5,8 @@ int main(void )
 {
    Float distance, start, stop;
 
-    echo = 20;
-    trig =21;
+    int echo = 20;
+    int trig =21;
 
    wiringPiSetupGpio();
                                                 // wiringPi 기준으로 PIN 번호 매김
