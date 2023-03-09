@@ -27,7 +27,7 @@ int main(void)
 
       distance = (stop - start) / 58;           // 시간의 차이를 이용하여 거리를 도출한다
       printf("%f \n", distance);  
-      delay(1000);
+      delay_ms(300);
   }
 
   return 0;
