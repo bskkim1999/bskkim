@@ -21,11 +21,13 @@ int main(void)
     
       while(digitalRead(echo) == 0)  { 
         //printf("digitalreadecho: %d \n", digitalRead(echo));              // wiringPi 1번핀을 Low일 경우
+         delay(100);
          start = micros();
                   }          // 마이크로초 저장
       
       while(digitalRead(echo) == 1) {    
         //printf("digitalreadecho: %d \n", digitalRead(echo));             // wiringPi 1번핀을 High일 경우
+         delay(100);
          stop = micros();             }          // 마이크로초 저장
 
       distance = (stop - start)/58.3;           // 시간의 차이를 이용하여 거리를 도출한다
@@ -33,7 +35,8 @@ int main(void)
       printf("start : %f \n", start);  
       printf("stop : %f \n", stop);
       printf("digitalreadecho: %d \n", digitalRead(echo)); 
-      
+      start = 0;
+      stop = 0;
       delay(70);
   }
 
