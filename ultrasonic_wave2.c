@@ -28,8 +28,8 @@ int main(void)
       distance = (stop - start) / 58;           // 시간의 차이를 이용하여 거리를 도출한다
       printf("%f \n", distance);
       printf("start : %f \n", start);  
-      printf("stop : %f", stop);
-      printf("digitalreadecho:%d", digitalRead(echo));
+      printf("stop : %f \n", stop);
+      printf("digitalreadecho: %f \n", digitalRead(echo));
       
       delay(300);
   }
