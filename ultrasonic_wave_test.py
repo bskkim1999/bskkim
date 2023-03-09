@@ -40,7 +40,6 @@ try:
 
         print("{}".format(check_time))
         print("Distance : %.1f cm" % distance)
-        time.sleep(5)
         
 except KeyboardInterrupt:
     print("거리 측정 완료 ")
