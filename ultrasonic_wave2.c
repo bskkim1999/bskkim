@@ -27,20 +27,20 @@ int main (void){
     delayMicroseconds(10) ;
     digitalWrite(trig, LOW) ;
 
-    printf("a");
+    printf("a\n");
     
     while (digitalRead(echo) == 0) {
-        printf("b");
+        printf("b\n");
     
-    start_time = micros() ;
-    printf("%d", start_time);
+        start_time = micros() ;
+        printf("%d\n", start_time);
     }
 
     while (digitalRead(echo) == 1){
-        printf("c");
+        printf("c\n");
 
-    end_time = micros() ;
-    printf("%d", end_time);
+        end_time = micros() ;
+        printf("%d\n", end_time);
     }
 
     printf("e\n");
