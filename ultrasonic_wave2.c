@@ -1,56 +1,34 @@
-#include <stdio.h>
-#include <wiringPi.h>
-#include <stdlib.h>
+#include <stdio.h>                              // stdio.h 파일 포함( printf() 사용하기 위해 )
+#include <wiringPi.h>                           // wiringPi.h 파일 포함
 
+int main(void )
+{
+   Float distance, start, stop;
 
-int main (void){
+    echo = 20;
+    trig =21;
 
+   wiringPiSetupGpio();
+                                                // wiringPi 기준으로 PIN 번호 매김
+   pinMode(trig, OUTPUT);                          // wiringPi GPIO 0번  = Python(BCM) 17번 
+   pinMode(echo, INPUT);                           // wiringPi GPIO 1번  = Python(BCM) 18번
 
-  int trig = 19 ;
-  int echo = 26 ;
-  int start_time, end_time ;
-  float distance ;
-
-    wiringPiSetupGpio();
-
- 
-
-  pinMode(trig, OUTPUT) ;
-  pinMode(echo , INPUT) ;
-
-
-  while(1) {
-
-    digitalWrite(trig, LOW) ;
-    delay(500) ;
-    digitalWrite(trig, HIGH) ;
-    delayMicroseconds(10) ;
-    digitalWrite(trig, LOW) ;
-
-    printf("a\n");
+  while(1){
+  
+      digitalWrite(trig,0);                        // wiringPi 0번핀을 Low로 출력
+      digitalWrite(trig,1);                        // wiringPi 0번핀을 High로 출력
+      delayMicroseconds(10);                    // 10마이크로초 동안 멈춘다
+      digitalWrite(trig,0);
     
-    while (digitalRead(echo) == 0) {
-        printf("b\n");
-    
-        start_time = micros() ;
-        printf("start_time : %d\n", start_time);
-    }
+      while(digitalRead(echo) == 0)                // wiringPi 1번핀을 Low일 경우
+         start = micros();                      // 마이크로초 저장
+      while(digitalRead(echo) == 1)                // wiringPi 1번핀을 High일 경우
+         stop = micros();                       // 마이크로초 저장
 
-    while (digitalRead(echo) == 1){
-        printf("c\n");
-
-        end_time = micros() ;
-        printf("endtime : %d\n", end_time);
-    }
-    delay(100);
-    printf("e\n");
-    distance = (end_time - start_time) / 29. / 2. ;
-
-    printf("distance %.2f cm \n", distance) ;
-
-    delay(500);
+      distance = (stop – start) / 58;           // 시간의 차이를 이용하여 거리를 도출한다
+      printf(“Distance=> %2f cm \n”,distance);  
+      delay(1000);
   }
 
-  return 0 ;
-
+  return 0;
 }
