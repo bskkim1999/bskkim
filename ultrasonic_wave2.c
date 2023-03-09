@@ -39,7 +39,7 @@ int main (void){
     start_time = micros() ;
 
     while (digitalRead(echo) == 1) ;
-    print("b");
+    printf("b");
     end_time = micros() ;
     printf("c");
     distance = (end_time - start_time) / 29. / 2. ;
