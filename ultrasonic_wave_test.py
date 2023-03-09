@@ -33,7 +33,7 @@ try:
         check_time = stop - start
         distance = check_time * 34300 / 2
         print("Distance : %.1f cm" % distance)
-        time.sleep(0.4)
+        #time.sleep(0.4)
         
 except KeyboardInterrupt:
     print("거리 측정 완료 ")
