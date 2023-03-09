@@ -1,33 +1,47 @@
-#include <stdio.h>                              // stdio.h 파일 포함( printf() 사용하기 위해 )
-#include <wiringPi.h>                           // wiringPi.h 파일 포함
+#include<stdio.h>
+#include<wiringPi.h>
 
-int main(void ){
+#define trigPin 19	
+#define echoPin 26
 
-    float distance, start, stop;
-    int trig=19;
-    int echo=26;
-        
-    wiringPiSetupGpio();
-                                                    // wiringPi 기준으로 PIN 번호 매김
-    pinMode(trig, OUTPUT);                          // wiringPi GPIO 0번  = Python(BCM) 17번 
-    pinMode(echo, INPUT);                           // wiringPi GPIO 1번  = Python(BCM) 18번
+//old #define trigPin 21	//gpio 5
+//old #define echoPin 4	//gpio  J16-pin3 GPIO 23
 
-    while(1){
-    
-        digitalWrite(trig,0);                        // wiringPi 0번핀을 Low로 출력
-        digitalWrite(trig,1);                        // wiringPi 0번핀을 High로 출력
-        delayMicroseconds(10);                    // 10마이크로초 동안 멈춘다
-        digitalWrite(trig,0);
-        
-        while(digitalRead(echo) == 0)                // wiringPi 1번핀을 Low일 경우
-            start = micros();                      // 마이크로초 저장
-        while(digitalRead(echo) == 1)                // wiringPi 1번핀을 High일 경우
-            stop = micros();                       // 마이크로초 저장
-
-        distance = (stop – start) / 58;           // 시간의 차이를 이용하여 거리를 도출한다
-        printf(“Dist : %.2f cm \n”, distance);  
-        delay(1000);
-    }
-
-    return 0;
+int main(void)
+{
+	int distance=0;
+	int pulse = 0;
+	
+	long startTime;
+	long travelTime;
+	
+	if(wiringPiSetup () == -1)
+	{
+		printf("Unable GPIO Setup"); 
+		return 1;
+	}
+		
+	pinMode (trigPin, OUTPUT);
+	pinMode (echoPin, INPUT);
+	
+	for(;;)
+	{
+		digitalWrite (trigPin, LOW);
+		usleep(2);
+		digitalWrite (trigPin, HIGH);
+		usleep(20);
+		digitalWrite (trigPin, LOW);
+		
+		while(digitalRead(echoPin) == LOW);
+		
+		startTime = micros();
+		
+		while(digitalRead(echoPin) == HIGH);
+		travelTime = micros() - startTime;
+		
+		int distance = travelTime / 58;
+		
+		printf( "Distance: %dcm\n", distance);
+		delay(200);
+	}
 }
