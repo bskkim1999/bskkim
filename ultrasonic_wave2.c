@@ -33,7 +33,7 @@ int main (void){
 
     digitalWrite(trig, LOW) ;
 
-    print("a");
+    printf("a");
     while (digitalRead(echo) == 0) ;
 
     start_time = micros() ;
@@ -41,7 +41,7 @@ int main (void){
     while (digitalRead(echo) == 1) ;
     print("b");
     end_time = micros() ;
-    print("c");
+    printf("c");
     distance = (end_time - start_time) / 29. / 2. ;
 
     printf("distance %.2f cm\n", distance) ;
