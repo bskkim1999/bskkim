@@ -20,16 +20,18 @@ int main(void)
       delayMicroseconds(10);                    // 10마이크로초 동안 멈춘다
       digitalWrite(trig,0);
     
-      while(digitalRead(echo) == 0)  {              // wiringPi 1번핀을 Low일 경우
+      while(digitalRead(echo) == 0)  { 
+        printf("digitalreadecho: %d \n", digitalRead(echo));              // wiringPi 1번핀을 Low일 경우
          start = micros();            }          // 마이크로초 저장
-      while(digitalRead(echo) == 1) {                // wiringPi 1번핀을 High일 경우
+      while(digitalRead(echo) == 1) {    
+        printf("digitalreadecho: %d \n", digitalRead(echo));             // wiringPi 1번핀을 High일 경우
          stop = micros();             }          // 마이크로초 저장
 
       distance = (stop - start) / 58;           // 시간의 차이를 이용하여 거리를 도출한다
       printf("%f \n", distance);
       printf("start : %f \n", start);  
       printf("stop : %f \n", stop);
-      printf("digitalreadecho: %f \n", digitalRead(echo));
+      printf("digitalreadecho: %d \n", digitalRead(echo)); 
       
       delay(300);
   }
