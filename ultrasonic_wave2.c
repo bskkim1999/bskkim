@@ -6,16 +6,14 @@
 int main (void){
 
 
-  int trig = 23 ;
-  int echo = 24 ;
+  int trig = 19 ;
+  int echo = 26 ;
   int start_time, end_time ;
   float distance ;
 
+    wiringPiSetupGpio();
 
-  if (wiringPiSetup() == -1){
-        exit(1) ;
-
-  } 
+ 
 
   pinMode(trig, OUTPUT) ;
   pinMode(echo , INPUT) ;
