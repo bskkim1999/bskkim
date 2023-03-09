@@ -30,14 +30,14 @@ int main (void){
     printf("a");
     
     while (digitalRead(echo) == 0) {
-        print("b")
+        printf("b");
     }
 
     start_time = micros() ;
     printf("%d", start_time);
 
     while (digitalRead(echo) == 1){
-        print("c")
+        printf("c");
     }
 
     printf("d");
