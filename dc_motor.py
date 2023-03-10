@@ -20,7 +20,7 @@ while(1):
     try:
         GPIO.output(ln1, 0)
         GPIO.output(ln2, 1)
-        GPIO.PWM(16, 200)
+        GPIO.PWM(16, 100)
 
     except:
         GPIO.cleanup()
