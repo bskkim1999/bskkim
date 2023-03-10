@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-
+#모든 핀 헤더에 pwm이 사용 가능한 것 같다... 확실하진 않음.
 pin1=16
 pin2=12 #pwm
 pin3=13 #pwm
