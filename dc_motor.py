@@ -3,30 +3,32 @@ import time
 
 ln1=20
 ln2=21
-
+enA=12
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 GPIO.setup(ln1, GPIO.OUT)
 GPIO.setup(ln2, GPIO.OUT)
-GPIO.setup(12, GPIO.OUT)
+GPIO.setup(enA, GPIO.OUT)
 
-enA=GPIO.PWM(12, 100)
-enA.start(0)
+enA_pwm=GPIO.PWM(enA, 100)   #(pin, freq)
+
+enA_pwm.start(0)   #(dutycycle)  0 ~ 100
 
 
 while(1):
     try:
         print("a")
-        enA.ChangeDutyCycle(100)
+        
         GPIO.output(ln1, 0)
         GPIO.output(ln2, 1)
+        enA_pwm.ChangeDutyCycle(100)  #(dutycycle)
         
-        #GPIO.PWM(12, 2000)
+        
 
     except:
         GPIO.cleanup()
-        enA.stop()    
-
+        enA_pwm.stop()    
+        exit(1)
     
