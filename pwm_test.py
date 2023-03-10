@@ -7,6 +7,7 @@ pin2=12 #pwm
 pin3=13 #pwm
 pin4=18 #pwm
 pin5=19 #pwm
+pin6=6 #pwm
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
@@ -16,16 +17,19 @@ GPIO.setup(pin2, GPIO.OUT)
 GPIO.setup(pin3, GPIO.OUT)
 GPIO.setup(pin4, GPIO.OUT)
 GPIO.setup(pin5, GPIO.OUT)
+GPIO.setup(pin6, GPIO.OUT)
 
 pin2_pwm=GPIO.PWM(pin2, 100)  #(pin, frequency)
 pin3_pwm=GPIO.PWM(pin3, 100)  #(pin, frequency)
 pin4_pwm=GPIO.PWM(pin4, 100)  #(pin, frequency)
 pin5_pwm=GPIO.PWM(pin5, 100)  #(pin, frequency)
+pin6_pwm=GPIO.PWM(pin6, 100)  #(pin, frequency)
 
 pin2_pwm.start(0)    #(dutycycle)
 pin3_pwm.start(0)    #(dutycycle)
 pin4_pwm.start(0)    #(dutycycle)
 pin5_pwm.start(0)    #(dutycycle)
+pin6_pwm.start(0)    #(dutycycle)
 
 while True:
     
@@ -40,6 +44,7 @@ while True:
             pin3_pwm.ChangeDutyCycle(i)
             pin4_pwm.ChangeDutyCycle(i)
             pin5_pwm.ChangeDutyCycle(i)
+            pin6_pwm.ChangeDutyCycle(i)
             time.sleep(0.1)
 
 
