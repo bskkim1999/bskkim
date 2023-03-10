@@ -10,6 +10,7 @@ GPIO.setwarnings(False)
 
 GPIO.setup(ln1, GPIO.OUT)
 GPIO.setup(ln2, GPIO.OUT)
+GPIO.setup(enA, GPIO.OUT)
 
 while(1):
     GPIO.output(ln1, 1)
