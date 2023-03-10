@@ -23,11 +23,14 @@ while(1):
         
         GPIO.output(ln1, 0)
         GPIO.output(ln2, 1)
+        
         enA_pwm.ChangeDutyCycle(100)  #(dutycycle)
-        
-        
+        time.sleep(0.5)
+        enA_pwm.ChangeDutyCycle(10)  #(dutycycle)
+        time.sleep(0.5)
 
     except:
+        print("interrupt")
         GPIO.cleanup()
         enA_pwm.stop()    
         exit(1)
