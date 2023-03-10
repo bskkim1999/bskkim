@@ -10,7 +10,7 @@ GPIO.setwarnings(False)
 
 GPIO.setup(ln1, GPIO.OUT)
 GPIO.setup(ln2, GPIO.OUT)
-GPIO.setup(16, GPIO.OUT)
+GPIO.setup(12, GPIO.OUT)
 
 enA=GPIO.PWM(12, 50)
 enA.start(70)
