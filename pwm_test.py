@@ -29,7 +29,7 @@ pin2_pwm.start(0)    #(dutycycle)
 pin3_pwm.start(0)    #(dutycycle)
 pin4_pwm.start(0)    #(dutycycle)
 pin5_pwm.start(0)    #(dutycycle)
-pin6_pwm.start(0)    #(dutycycle)
+pin6_pwm.start(100)    #(dutycycle)
 
 while True:
     
@@ -44,7 +44,7 @@ while True:
             pin3_pwm.ChangeDutyCycle(i)
             pin4_pwm.ChangeDutyCycle(i)
             pin5_pwm.ChangeDutyCycle(i)
-            pin6_pwm.ChangeDutyCycle(i)
+            #pin6_pwm.ChangeDutyCycle(i)
             time.sleep(0.1)
 
 
