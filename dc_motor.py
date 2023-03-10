@@ -18,6 +18,7 @@ enA.start(0)
 
 while(1):
     try:
+        print("a")
         enA.ChangeDutyCycle(100)
         GPIO.output(ln1, 0)
         GPIO.output(ln2, 1)
