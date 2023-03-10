@@ -18,8 +18,8 @@ enA.start(100)
 
 while(1):
     try:
-        GPIO.output(ln1, 1)
-        GPIO.output(ln2, 0)
+        GPIO.output(ln1, 0)
+        GPIO.output(ln2, 1)
         GPIO.PWM(16, 200)
 
     except:
