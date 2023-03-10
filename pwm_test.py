@@ -31,7 +31,7 @@ while True:
             print("{}".format(i))
             pin2_pwm.ChangeDutyCycle(i)
             pin3_pwm.ChangeDutyCycle(i)
-            time.sleep(1)
+            time.sleep(0.3)
 
 
     except:
