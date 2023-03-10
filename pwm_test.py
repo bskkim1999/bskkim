@@ -7,7 +7,7 @@ pin2=12 #pwm
 pin3=13 #pwm
 pin4=18 #pwm
 pin5=19 #pwm
-pin6=6 #pwm
+pin6=14 #pwm
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
