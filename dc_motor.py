@@ -12,15 +12,15 @@ GPIO.setup(ln1, GPIO.OUT)
 GPIO.setup(ln2, GPIO.OUT)
 GPIO.setup(12, GPIO.OUT)
 
-enA=GPIO.PWM(12, 200)
-enA.start(70)
+enA=GPIO.PWM(12, 2000)
+enA.start(100)
 
 
 while(1):
     try:
         GPIO.output(ln1, 0)
         GPIO.output(ln2, 1)
-        GPIO.PWM(12, 200)
+        GPIO.PWM(12, 2000)
 
     except:
         GPIO.cleanup()
