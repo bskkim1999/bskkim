@@ -3,6 +3,7 @@ import time
 
 ln1=20
 ln2=21
+enA=16
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
@@ -14,4 +15,6 @@ while(1):
     GPIO.output(ln1, 1)
     
     GPIO.output(ln2, 0)
+    GPIO.output(enA, 1)
+
     
