@@ -29,7 +29,7 @@ pin2_pwm.start(0)    #(dutycycle)
 pin3_pwm.start(0)    #(dutycycle)
 pin4_pwm.start(0)    #(dutycycle)
 pin5_pwm.start(0)    #(dutycycle)
-pin6_pwm.start(100)    #(dutycycle)
+pin6_pwm.start(50)    #(dutycycle)
 
 while True:
     
