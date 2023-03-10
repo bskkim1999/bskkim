@@ -28,6 +28,7 @@ while True:
 
         #pwm
         for i in range(0,101):
+            print("{}".format(i))
             pin2_pwm.ChangeDutyCycle(i)
             pin3_pwm.ChangeDutyCycle(i)
             time.sleep(1)
@@ -38,3 +39,4 @@ while True:
         GPIO.cleanup()
         pin2_pwm.stop()
         pin3_pwm.stop()
+        exit(1)
