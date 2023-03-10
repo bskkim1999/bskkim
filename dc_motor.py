@@ -3,7 +3,7 @@ import time
 
 ln1=20
 ln2=21
-enA=GPIO.PWM(16, 100);
+enA=GPIO.PWM(16, 100)
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
