@@ -12,7 +12,7 @@ GPIO.setup(ln1, GPIO.OUT)
 GPIO.setup(ln2, GPIO.OUT)
 GPIO.setup(enA, GPIO.OUT)
 
-enA_pwm=GPIO.PWM(enA, 1000)   #(pin, freq)
+enA_pwm=GPIO.PWM(enA, 100)   #(pin, freq)
 
 enA_pwm.start(0)   #(dutycycle)  0 ~ 100
 
