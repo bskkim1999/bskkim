@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
+power=16
 ln1=20
 ln2=21
 enA=12
@@ -11,6 +12,7 @@ GPIO.setwarnings(False)
 GPIO.setup(ln1, GPIO.OUT)
 GPIO.setup(ln2, GPIO.OUT)
 GPIO.setup(enA, GPIO.OUT)
+GPIO.setup(power, GPIO.OUT)
 
 enA_pwm=GPIO.PWM(enA, 100)   #(pin, freq)
 
@@ -23,7 +25,8 @@ while(1):
         
         GPIO.output(ln1, 0)
         GPIO.output(ln2, 1)
-        
+        GPIO.output(power, 1)
+
         enA_pwm.ChangeDutyCycle(100)  #(dutycycle)
         #time.sleep(0.5)
         #enA_pwm.ChangeDutyCycle(10)  #(dutycycle)
