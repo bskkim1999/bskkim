@@ -28,19 +28,19 @@ enB_right=19
 #기능함수들
 #전진
 def forward_dc():
-    GPIO.output(ln1_left, 1)
-    GPIO.output(ln2_left, 0)
-    GPIO.output(ln3_left, 0)
-    GPIO.output(ln4_left, 1)
+    GPIO.output(ln1_left, 0)
+    GPIO.output(ln2_left, 1)
+    GPIO.output(ln3_left, 1)
+    GPIO.output(ln4_left, 0)
 
 
 
 #후진
 def backward_dc():
-    GPIO.output(ln1_left, 0)
-    GPIO.output(ln2_left, 1)
-    GPIO.output(ln3_left, 0)
-    GPIO.output(ln4_left, 1)
+    GPIO.output(ln1_left, 1)
+    GPIO.output(ln2_left, 0)
+    GPIO.output(ln3_left, 1)
+    GPIO.output(ln4_left, 0)
 
 
 #==============================================================================
