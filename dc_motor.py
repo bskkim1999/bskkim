@@ -86,6 +86,10 @@ enA_right_pwm.start(0)   #(dutycycle)  0 ~ 100
 enB_right_pwm.start(0)   #(dutycycle)  0 ~ 100
 
 #========================================main task================================
+old_settings = termios.tcgetattr(sys.stdin)
+tty.setcbreak(sys.stdin.fileno())
+
+
 while(1):
     try:
         if select.select([sys.stdin], [], [], 0.1)[0]:
