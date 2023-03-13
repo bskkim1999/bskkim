@@ -1,8 +1,8 @@
 import RPi.GPIO as GPIO
 import time
 #==============================헤더핀 설정========================================
-#차체 왼쪽의 모터드라이브=앞바퀴, 오른쪽 모터드라이브=뒷바퀴
-#왼쪽(앞바퀴)
+#차체 왼쪽의 모터드라이브=뒷바퀴, 오른쪽 모터드라이브=앞바퀴
+#왼쪽(뒷바퀴)
 power_left=12
 
 ln1_left=16
@@ -13,7 +13,7 @@ ln3_left=8
 ln4_left=7
 enB_left=1
 
-#오른쪽(뒷바퀴)
+#오른쪽(앞바퀴)
 power_right=14
 
 ln1_right=15
@@ -28,19 +28,19 @@ enB_right=19
 #기능함수들
 #전진
 def forward_dc():
-    GPIO.output(ln1_right, 1)
-    GPIO.output(ln2_right, 0)
-    GPIO.output(ln3_right, 1)
-    GPIO.output(ln4_right, 0)
+    GPIO.output(ln1_left, 1)
+    GPIO.output(ln2_left, 0)
+    GPIO.output(ln3_left, 1)
+    GPIO.output(ln4_left, 0)
 
 
 
 #후진
 def backward_dc():
-    GPIO.output(ln1_right, 0)
-    GPIO.output(ln2_right, 1)
-    GPIO.output(ln3_right, 0)
-    GPIO.output(ln4_right, 1)
+    GPIO.output(ln1_left, 0)
+    GPIO.output(ln2_left, 1)
+    GPIO.output(ln3_left, 0)
+    GPIO.output(ln4_left, 1)
 
 
 #==============================================================================
