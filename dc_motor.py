@@ -1,5 +1,9 @@
 import RPi.GPIO as GPIO
 import time
+import termios
+import tty
+import sys
+import select
 #==============================헤더핀 설정========================================
 #차체 왼쪽의 모터드라이브=뒷바퀴, 오른쪽 모터드라이브=앞바퀴
 #왼쪽(뒷바퀴)
@@ -78,25 +82,27 @@ enB_right_pwm.start(0)   #(dutycycle)  0 ~ 100
 #========================================main task================================
 while(1):
     try:
-        #기본설정
-        GPIO.output(power_left, 1)
-        GPIO.output(power_right, 1)
-        enA_left_pwm.ChangeDutyCycle(100)
-        enB_left_pwm.ChangeDutyCycle(100)
-        enA_right_pwm.ChangeDutyCycle(100)
-        enA_right_pwm.ChangeDutyCycle(100)
+        if select.select([sys.stdin], [], [], 0.1)[0]:
+            direction = sys.stdin.read(1)
+            #기본설정
+            GPIO.output(power_left, 1)
+            GPIO.output(power_right, 1)
+            enA_left_pwm.ChangeDutyCycle(100)
+            enB_left_pwm.ChangeDutyCycle(100)
+            enA_right_pwm.ChangeDutyCycle(100)
+            enA_right_pwm.ChangeDutyCycle(100)
 
-        direction=input("((forward:w, backward:s)) : ")
+            #direction=input("((forward:w, backward:s)) : ")
 
-        #전진(2륜구동), 뒷바퀴 2개만 회전시킨다.
-        if direction=='w' :
-            forward_dc()
-            time.sleep(0.1)
-            
-        #후진(2륜구동), 뒷바퀴 2개만 회전시킴.
-        elif direction=='s':
-            backward_dc()
-            time.sleep(0.1)
+            #전진(2륜구동), 뒷바퀴 2개만 회전시킨다.
+            if direction=='w' :
+                forward_dc()
+                
+                
+            #후진(2륜구동), 뒷바퀴 2개만 회전시킴.
+            elif direction=='s':
+                backward_dc()
+                
 
 
     except:
@@ -108,3 +114,5 @@ while(1):
         enB_right_pwm.stop()
         exit(1)
     
+
+termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings)
