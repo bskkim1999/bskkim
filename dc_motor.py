@@ -39,8 +39,8 @@ def forward_dc():
 def backward_dc():
     GPIO.output(ln1_left, 1)
     GPIO.output(ln2_left, 0)
-    GPIO.output(ln3_left, 1)
-    GPIO.output(ln4_left, 0)
+    GPIO.output(ln3_left, 0)
+    GPIO.output(ln4_left, 1)
 
 
 #==============================================================================
@@ -91,10 +91,12 @@ while(1):
         #전진(2륜구동), 뒷바퀴 2개만 회전시킨다.
         if direction=='w' :
             forward_dc()
+            time.sleep(0.1)
             
         #후진(2륜구동), 뒷바퀴 2개만 회전시킴.
         elif direction=='s':
             backward_dc()
+            time.sleep(0.1)
 
 
     except:
