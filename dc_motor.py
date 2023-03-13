@@ -30,8 +30,8 @@ enB_right=19
 def forward_dc():
     GPIO.output(ln1_left, 1)
     GPIO.output(ln2_left, 0)
-    GPIO.output(ln3_left, 1)
-    GPIO.output(ln4_left, 0)
+    GPIO.output(ln3_left, 0)
+    GPIO.output(ln4_left, 1)
 
 
 
