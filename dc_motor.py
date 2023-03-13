@@ -112,7 +112,12 @@ while(1):
             #후진(2륜구동), 뒷바퀴 2개만 회전시킴.
             elif direction=='s':
                 backward_dc()
-                
+
+        else:
+            enA_left_pwm.ChangeDutyCycle(0)
+            enB_left_pwm.ChangeDutyCycle(0)
+            enA_right_pwm.ChangeDutyCycle(0)
+            enA_right_pwm.ChangeDutyCycle(0)               
 
 
     except:
