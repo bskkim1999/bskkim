@@ -32,6 +32,9 @@ enB_right=19
 #기능함수들
 #전진
 def forward_dc():
+    GPIO.output(power_left, 1)
+    GPIO.output(power_right, 1)
+
     GPIO.output(ln1_left, 0)
     GPIO.output(ln2_left, 1)
     GPIO.output(ln3_left, 1)
@@ -41,6 +44,9 @@ def forward_dc():
 
 #후진
 def backward_dc():
+    GPIO.output(power_left, 1)
+    GPIO.output(power_right, 1)
+
     GPIO.output(ln1_left, 1)
     GPIO.output(ln2_left, 0)
     GPIO.output(ln3_left, 0)
@@ -84,9 +90,9 @@ while(1):
     try:
         if select.select([sys.stdin], [], [], 0.1)[0]:
             direction = sys.stdin.read(1)
+            
             #기본설정
-            GPIO.output(power_left, 1)
-            GPIO.output(power_right, 1)
+            
             enA_left_pwm.ChangeDutyCycle(100)
             enB_left_pwm.ChangeDutyCycle(100)
             enA_right_pwm.ChangeDutyCycle(100)
