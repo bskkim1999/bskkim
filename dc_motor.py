@@ -86,7 +86,7 @@ while(1):
         enA_right_pwm.ChangeDutyCycle(100)
         enA_right_pwm.ChangeDutyCycle(100)
 
-        direction=input("forward:w, backward:s")
+        direction=input("((forward:w, backward:s)) : ")
 
         #전진(2륜구동), 뒷바퀴 2개만 회전시킨다.
         if direction=='w' :
