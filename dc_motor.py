@@ -40,6 +40,12 @@ def forward_dc():
     GPIO.output(ln3_left, 1)
     GPIO.output(ln4_left, 0)
 
+    GPIO.output(ln1_right, 0)
+    GPIO.output(ln2_right, 1)
+    GPIO.output(ln3_right, 1)
+    GPIO.output(ln4_right, 0)
+
+
 
 
 #후진
