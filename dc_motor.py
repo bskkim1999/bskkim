@@ -135,15 +135,18 @@ while(1):
 
             #전진(4륜구동), 
             if direction=='w' :
+                print("w")
                 forward_dc()
                 
                 
             #후진(4륜구동)
             elif direction=='s':
+                print("s")
                 backward_dc()
 
             #정지
             elif direction=='d':
+                print("d")
                 stop_dc()
                 
                 
