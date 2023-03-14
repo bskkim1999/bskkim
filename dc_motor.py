@@ -70,6 +70,11 @@ def stop_dc():
     GPIO.output(ln3_right, 0)
     GPIO.output(ln4_right, 0)
 
+    enA_left_pwm.ChangeDutyCycle(0)
+    enB_left_pwm.ChangeDutyCycle(0)
+    enA_right_pwm.ChangeDutyCycle(0)
+    enA_right_pwm.ChangeDutyCycle(0)
+
 
 
 #==============================================================================
@@ -114,40 +119,40 @@ while(1):
         #if select.select([sys.stdin], [], [], 0.1)[0]:
             #direction = sys.stdin.read(1)
             
-            #기본설정
+        #기본설정
+        
+        enA_left_pwm.ChangeDutyCycle(100)
+        enB_left_pwm.ChangeDutyCycle(100)
+        enA_right_pwm.ChangeDutyCycle(100)
+        enA_right_pwm.ChangeDutyCycle(100)
+        
+        GPIO.output(ln1_left, 0)
+        GPIO.output(ln2_left, 0)
+        GPIO.output(ln3_left, 0)
+        GPIO.output(ln4_left, 0)
+
+        GPIO.output(ln1_right, 0)
+        GPIO.output(ln2_right, 0)
+        GPIO.output(ln3_right, 0)
+        GPIO.output(ln4_right, 0)
+
+        direction=input("((forward:w, backward:s)) : ")
+
+        #전진(4륜구동), 
+        if direction=='w' :
+            print("w")
+            forward_dc()
             
-            enA_left_pwm.ChangeDutyCycle(100)
-            enB_left_pwm.ChangeDutyCycle(100)
-            enA_right_pwm.ChangeDutyCycle(100)
-            enA_right_pwm.ChangeDutyCycle(100)
             
-            GPIO.output(ln1_left, 0)
-            GPIO.output(ln2_left, 0)
-            GPIO.output(ln3_left, 0)
-            GPIO.output(ln4_left, 0)
+        #후진(4륜구동)
+        elif direction=='s':
+            print("s")
+            backward_dc()
 
-            GPIO.output(ln1_right, 0)
-            GPIO.output(ln2_right, 0)
-            GPIO.output(ln3_right, 0)
-            GPIO.output(ln4_right, 0)
-
-            direction=input("((forward:w, backward:s)) : ")
-
-            #전진(4륜구동), 
-            if direction=='w' :
-                print("w")
-                forward_dc()
-                
-                
-            #후진(4륜구동)
-            elif direction=='s':
-                print("s")
-                backward_dc()
-
-            #정지
-            elif direction=='d':
-                print("d")
-                stop_dc()
+        #정지
+        elif direction=='d':
+            print("d")
+            stop_dc()
                 
                 
 
