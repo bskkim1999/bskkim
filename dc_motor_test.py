@@ -4,15 +4,20 @@ import time
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
+#<<핀 헤더 설정>>
+##뒷바퀴##
+#오른쪽 뒷바퀴
 enA=16
 ln1=20
 ln2=21
-
+#왼쪽 뒷바퀴
 enB=8
 ln3=7
 ln4=1
 
 power_right=26
+
+##앞바퀴##
 
 GPIO.setup(enA, GPIO.OUT)
 GPIO.setup(ln1, GPIO.OUT)
@@ -43,6 +48,6 @@ while True:
     except:
         print("interrupt!!!!!!!!!")
         GPIO.cleanup()
-        #enA_pwm.stop()
+        enA_pwm.stop()
         enB_pwm.stop()
         exit(1)
