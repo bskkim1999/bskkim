@@ -83,4 +83,4 @@ while True:
         enB_left_pwm.stop()
         enA_right_pwm.stop()
         enB_right_pwm.stop()
-       
+        exit(1)
