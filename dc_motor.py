@@ -92,14 +92,14 @@ enA_right_pwm.start(0)   #(dutycycle)  0 ~ 100
 enB_right_pwm.start(0)   #(dutycycle)  0 ~ 100
 
 #========================================main task================================
-old_settings = termios.tcgetattr(sys.stdin)
-tty.setcbreak(sys.stdin.fileno())
+#old_settings = termios.tcgetattr(sys.stdin)
+#tty.setcbreak(sys.stdin.fileno())
 
 
 while(1):
     try:
-        if select.select([sys.stdin], [], [], 0.1)[0]:
-            direction = sys.stdin.read(1)
+        #if select.select([sys.stdin], [], [], 0.1)[0]:
+            #direction = sys.stdin.read(1)
             
             #기본설정
             
@@ -108,7 +108,7 @@ while(1):
             enA_right_pwm.ChangeDutyCycle(100)
             enA_right_pwm.ChangeDutyCycle(100)
 
-            #direction=input("((forward:w, backward:s)) : ")
+            direction=input("((forward:w, backward:s)) : ")
 
             #전진(2륜구동), 뒷바퀴 2개만 회전시킨다.
             if direction=='w' :
@@ -119,11 +119,7 @@ while(1):
             elif direction=='s':
                 backward_dc()
 
-        else:
-            enA_left_pwm.ChangeDutyCycle(0)
-            enB_left_pwm.ChangeDutyCycle(0)
-            enA_right_pwm.ChangeDutyCycle(0)
-            enA_right_pwm.ChangeDutyCycle(0)               
+               
 
 
     except:
@@ -136,4 +132,4 @@ while(1):
         exit(1)
     
 
-termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings)
+#termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings)
