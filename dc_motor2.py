@@ -61,10 +61,11 @@ enB_right_pwm.start(0)   #(dutycycle)  0 ~ 100
 
 #========main task================================================================
 
-GPIO.output(power_left, 1)
-GPIO.output(power_right, 1)
+while True:
+    GPIO.output(power_left, 1)
+    GPIO.output(power_right, 1)
 
-GPIO.output(ln1_left, 0)
-GPIO.output(ln2_left, 1)
-GPIO.output(ln3_left, 1)
-GPIO.output(ln4_left, 0)
+    GPIO.output(ln1_left, 0)
+    GPIO.output(ln2_left, 1)
+    GPIO.output(ln3_left, 1)
+    GPIO.output(ln4_left, 0)
