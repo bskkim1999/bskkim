@@ -71,10 +71,10 @@ while True:
         GPIO.output(power_left, 1)
         GPIO.output(power_right, 1)
 
-        GPIO.output(ln1_right, 0)
-        GPIO.output(ln2_right, 1)
-        #GPIO.output(ln3_right, 1)
-        #GPIO.output(ln4_right, 0)
+        #GPIO.output(ln1_right, 0)
+        #GPIO.output(ln2_right, 1)
+        GPIO.output(ln3_right, 1)
+        GPIO.output(ln4_right, 0)
 
     except:
         print("interrupt!!!!!!!!!")
