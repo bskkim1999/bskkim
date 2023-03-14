@@ -35,8 +35,8 @@ while True:
         GPIO.output(power_right, 1)
         #GPIO.output(ln1, 0)
         #GPIO.output(ln2, 1)
-        GPIO.output(ln3, 0)
-        GPIO.output(ln4, 1)
+        GPIO.output(ln3, 1)
+        GPIO.output(ln4, 0)
 
     except:
         print("interrupt!!!!!!!!!")
