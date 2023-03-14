@@ -28,6 +28,8 @@ def dc_rightback():
     GPIO.output(ln1_back, 0)
     GPIO.output(ln2_back, 1)
 
+    return None
+
 def dc_leftback():
     
     enB_pwm_back.ChangeDutyCycle(100)
@@ -35,6 +37,8 @@ def dc_leftback():
     #앞으로가기
     GPIO.output(ln3_back, 1)
     GPIO.output(ln4_back, 0)
+
+    return None
 
 
 
