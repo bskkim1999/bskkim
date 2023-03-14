@@ -58,6 +58,17 @@ def backward_dc():
     GPIO.output(ln3_left, 0)
     GPIO.output(ln4_left, 1)
 
+#정지
+def stop_dc():
+    GPIO.output(ln1_left, 0)
+    GPIO.output(ln2_left, 0)
+    GPIO.output(ln3_left, 0)
+    GPIO.output(ln4_left, 0)
+
+    GPIO.output(ln1_right, 0)
+    GPIO.output(ln2_right, 0)
+    GPIO.output(ln3_right, 0)
+    GPIO.output(ln4_right, 0)
 
 #==============================================================================
 
@@ -107,19 +118,33 @@ while(1):
             enB_left_pwm.ChangeDutyCycle(100)
             enA_right_pwm.ChangeDutyCycle(100)
             enA_right_pwm.ChangeDutyCycle(100)
+            
+            GPIO.output(ln1_left, 0)
+            GPIO.output(ln2_left, 0)
+            GPIO.output(ln3_left, 0)
+            GPIO.output(ln4_left, 0)
+
+            GPIO.output(ln1_right, 0)
+            GPIO.output(ln2_right, 0)
+            GPIO.output(ln3_right, 0)
+            GPIO.output(ln4_right, 0)
 
             direction=input("((forward:w, backward:s)) : ")
 
-            #전진(2륜구동), 뒷바퀴 2개만 회전시킨다.
+            #전진(4륜구동), 
             if direction=='w' :
                 forward_dc()
                 
                 
-            #후진(2륜구동), 뒷바퀴 2개만 회전시킴.
+            #후진(4륜구동)
             elif direction=='s':
                 backward_dc()
 
-               
+            #정지
+            elif direction=='d':
+                stop_dc()
+                
+                
 
 
     except:
