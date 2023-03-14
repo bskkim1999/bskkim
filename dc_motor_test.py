@@ -22,10 +22,10 @@ GPIO.setup(ln4, GPIO.OUT)
 GPIO.setup(enB, GPIO.OUT)
 GPIO.setup(power_right, GPIO.OUT)
 
-enA_pwm=GPIO.PWM(enA, 100) 
+#enA_pwm=GPIO.PWM(enA, 100) 
 enB_pwm=GPIO.PWM(enB, 100)
 
-enA_pwm.start(0)
+#enA_pwm.start(0)
 enB_pwm.start(0)
 
 while True:
