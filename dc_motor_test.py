@@ -29,10 +29,18 @@ enB_pwm=GPIO.PWM(enB, 100)
 enB_pwm.start(0)
 
 while True:
-    #enA_pwm.ChangeDutyCycle(100)
-    enB_pwm.ChangeDutyCycle(100)
-    GPIO.output(power_right, 1)
-    #GPIO.output(ln1, 0)
-    #GPIO.output(ln2, 1)
-    GPIO.output(ln3, 0)
-    GPIO.output(ln4, 1)
+    try:
+        #enA_pwm.ChangeDutyCycle(100)
+        enB_pwm.ChangeDutyCycle(100)
+        GPIO.output(power_right, 1)
+        #GPIO.output(ln1, 0)
+        #GPIO.output(ln2, 1)
+        GPIO.output(ln3, 0)
+        GPIO.output(ln4, 1)
+
+    except:
+        print("interrupt!!!!!!!!!")
+        GPIO.cleanup()
+        #enA_pwm.stop()
+        enB_pwm.stop()
+        exit(1)
