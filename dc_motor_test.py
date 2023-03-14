@@ -34,7 +34,7 @@ GPIO.setup(enB_back, GPIO.OUT)
 GPIO.setup(power_right, GPIO.OUT)
 
 enA_pwm_back=GPIO.PWM(enA_back, 100) 
-enB_pwm_back=GPIO.PWM(enB, 100)
+enB_pwm_back=GPIO.PWM(enB_back, 100)
 
 enA_pwm_back.start(0)
 enB_pwm_back.start(0)
