@@ -21,8 +21,7 @@ ln4_back=1
 
 #==================================================================================
 def dc_rightback():
-    enA_pwm_back=GPIO.PWM(enA_back, 100)
-    enA_pwm_back.start(0)
+    
     enA_pwm_back.ChangeDutyCycle(100)
 
     #앞으로가기
@@ -30,8 +29,7 @@ def dc_rightback():
     GPIO.output(ln2_back, 1)
 
 def dc_leftback():
-    enB_pwm_back=GPIO.PWM(enB_back, 100)
-    enB_pwm_back.start(0)
+    
     enB_pwm_back.ChangeDutyCycle(100)
 
     #앞으로가기
@@ -52,6 +50,11 @@ GPIO.setup(ln4_back, GPIO.OUT)
 GPIO.setup(enB_back, GPIO.OUT)
 GPIO.setup(power_right, GPIO.OUT)
 
+enA_pwm_back=GPIO.PWM(enA_back, 100)
+enA_pwm_back.start(0)
+
+enB_pwm_back=GPIO.PWM(enB_back, 100)
+enB_pwm_back.start(0)
 #==============================================main task==============================
 while True:
     try:
