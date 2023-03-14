@@ -62,16 +62,25 @@ enB_right_pwm.start(0)   #(dutycycle)  0 ~ 100
 #========main task================================================================
 
 while True:
-    
-    enA_left_pwm.ChangeDutyCycle(100)
-    enB_left_pwm.ChangeDutyCycle(100)
-    enA_right_pwm.ChangeDutyCycle(100)
-    enA_right_pwm.ChangeDutyCycle(100)
-    
-    GPIO.output(power_left, 1)
-    GPIO.output(power_right, 1)
+    try:
+        enA_left_pwm.ChangeDutyCycle(100)
+        enB_left_pwm.ChangeDutyCycle(100)
+        enA_right_pwm.ChangeDutyCycle(100)
+        enA_right_pwm.ChangeDutyCycle(100)
+        
+        GPIO.output(power_left, 1)
+        GPIO.output(power_right, 1)
 
-    GPIO.output(ln1_right, 0)
-    GPIO.output(ln2_right, 1)
-    #GPIO.output(ln3_right, 1)
-    #GPIO.output(ln4_right, 0)
+        GPIO.output(ln1_right, 0)
+        GPIO.output(ln2_right, 1)
+        #GPIO.output(ln3_right, 1)
+        #GPIO.output(ln4_right, 0)
+
+    except:
+        print("interrupt!!!!!!!!!")
+        GPIO.cleanup()
+        enA_left_pwm.stop()
+        enB_left_pwm.stop()
+        enA_right_pwm.stop()
+        enB_right_pwm.stop()
+       
