@@ -63,18 +63,33 @@ enB_right_pwm.start(0)   #(dutycycle)  0 ~ 100
 
 while True:
     try:
-        #enA_left_pwm.ChangeDutyCycle(100)
-        #enB_left_pwm.ChangeDutyCycle(100)
+        enA_left_pwm.ChangeDutyCycle(100)
+        enB_left_pwm.ChangeDutyCycle(100)
         enA_right_pwm.ChangeDutyCycle(100)
         enB_right_pwm.ChangeDutyCycle(100)
         
         #GPIO.output(power_left, 1)
-        GPIO.output(power_right, 1)
+        #GPIO.output(power_right, 1)
+        
+        direction=input("write a or b or c or d : ")
 
-        GPIO.output(ln1_right, 1)
-        GPIO.output(ln2_right, 0)
-        GPIO.output(ln3_right, 0)
-        GPIO.output(ln4_right, 1)
+        if direction=="a":
+            GPIO.output(ln1_right, 1)
+            GPIO.output(ln2_right, 0)
+            
+
+        elif direction=="b":
+            GPIO.output(ln3_right, 0)
+            GPIO.output(ln4_right, 1)
+
+        elif direction=="c":
+            GPIO.output(ln1_left, 0)
+            GPIO.output(ln2_left, 1)
+
+        elif direction=="d":
+            GPIO.output(ln3_left, 0)
+            GPIO.output(ln4_left, 1)
+
 
     except:
         print("interrupt!!!!!!!!!")
