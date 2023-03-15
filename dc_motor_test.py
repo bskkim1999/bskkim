@@ -17,12 +17,15 @@ ln4_back=1
 
 ##앞바퀴##
 power_left=19
-#왼쪽 앞바퀴
-enB_front=2
-ln3_front=3
-ln4_front=4
 #오른쪽 앞바퀴
+enA_front=2
+ln1_front=3
+ln2_front=4
 
+#왼쪽 앞바퀴
+enB_front=17
+ln3_front=27
+ln4_front=22
 
 #==================================================================================
 def dc_rightback():
@@ -52,6 +55,16 @@ def dc_leftfront():
     GPIO.output(ln3_front, 1)
     GPIO.output(ln4_front, 0)
 
+    return None
+
+def dc_rightfront():
+    enA_pwm_front.ChangeDutyCycle(100)
+
+    
+    GPIO.output(ln1_front, 1)
+    GPIO.output(ln2_front, 0)
+
+    return None
 
 #==================================================================================
 GPIO.setmode(GPIO.BCM)
@@ -65,6 +78,9 @@ GPIO.setup(ln4_back, GPIO.OUT)
 GPIO.setup(enB_back, GPIO.OUT)
 GPIO.setup(power_right, GPIO.OUT)
 
+GPIO.setup(enA_front, GPIO.OUT)
+GPIO.setup(ln1_front, GPIO.OUT)
+GPIO.setup(ln2_front, GPIO.OUT)
 GPIO.setup(ln3_front, GPIO.OUT)
 GPIO.setup(ln4_front, GPIO.OUT)
 GPIO.setup(enB_front, GPIO.OUT)
@@ -77,6 +93,11 @@ enA_pwm_back.start(0)
 enB_pwm_back=GPIO.PWM(enB_back, 100)
 enB_pwm_back.start(0)
 
+
+enA_pwm_front=GPIO.PWM(enA_front, 100)
+enA_pwm_front.start(0)
+
+
 enB_pwm_front=GPIO.PWM(enB_front, 100)
 enB_pwm_front.start(0)
 #==============================================main task==============================
@@ -88,6 +109,7 @@ while True:
         dc_rightback()
         dc_leftback()
         dc_leftfront()
+        #dc_rightfront()
 
         
 
