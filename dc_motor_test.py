@@ -148,7 +148,7 @@ while True:
         GPIO.output(power_right, 1)
         GPIO.output(power_left, 1)
         
-        direction=input("write w or s or d: ")
+        direction=input("write w or s or a: ")
         
         if direction=="w":
             dc_rightback()
@@ -161,6 +161,12 @@ while True:
             dc_leftback_backup()
             dc_leftfront_backup()
             dc_rightfront_backup()
+
+        elif direction=="a":
+            dc_leftback_backup()
+            dc_leftfront_backup()
+            dc_rightfront()
+            dc_leftfront()
 
         
 
