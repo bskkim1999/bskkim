@@ -108,8 +108,8 @@ while True:
         GPIO.output(power_left, 1)
         dc_rightback()
         dc_leftback()
-        dc_leftfront()
-        #dc_rightfront()
+        #dc_leftfront()
+        dc_rightfront()
 
         
 
