@@ -60,7 +60,7 @@ def dc_leftfront():
 def dc_rightfront():
     enA_pwm_front.ChangeDutyCycle(100)
 
-    
+    #앞으로가기
     GPIO.output(ln1_front, 1)
     GPIO.output(ln2_front, 0)
 
@@ -108,7 +108,7 @@ while True:
         GPIO.output(power_left, 1)
         dc_rightback()
         dc_leftback()
-        #dc_leftfront()
+        dc_leftfront()
         dc_rightfront()
 
         
