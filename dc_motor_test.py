@@ -28,6 +28,7 @@ ln3_front=27
 ln4_front=22
 
 #==================================================================================
+#앞으로가기
 def dc_rightback():
     
     enA_pwm_back.ChangeDutyCycle(100)
@@ -65,6 +66,46 @@ def dc_rightfront():
     GPIO.output(ln2_front, 0)
 
     return None
+
+#뒤로가기
+def dc_rightback_backup():
+    
+    enA_pwm_back.ChangeDutyCycle(100)
+
+    #뒤로가기
+    GPIO.output(ln1_back, 1)
+    GPIO.output(ln2_back, 0)
+
+    return None
+
+def dc_leftback_backup():
+    
+    enB_pwm_back.ChangeDutyCycle(100)
+
+    #뒤로가기
+    GPIO.output(ln3_back, 0)
+    GPIO.output(ln4_back, 1)
+
+    return None
+
+def dc_leftfront_backup():
+    enB_pwm_front.ChangeDutyCycle(100)
+
+    #뒤로가기
+    GPIO.output(ln3_front, 1)
+    GPIO.output(ln4_front, 0)
+
+    return None
+
+def dc_rightfront_backup():
+    enA_pwm_front.ChangeDutyCycle(100)
+
+    #뒤로가기
+    GPIO.output(ln1_front, 0)
+    GPIO.output(ln2_front, 1)
+
+    return None
+
 
 #==================================================================================
 GPIO.setmode(GPIO.BCM)
@@ -106,10 +147,20 @@ while True:
         
         GPIO.output(power_right, 1)
         GPIO.output(power_left, 1)
-        dc_rightback()
-        dc_leftback()
-        dc_leftfront()
-        dc_rightfront()
+        
+        direction=input("write w or s or d: ")
+        
+        if direction=="w":
+            dc_rightback()
+            dc_leftback()
+            dc_leftfront()
+            dc_rightfront()
+
+        elif direction=="s":
+            dc_rightback_backup()
+            dc_leftback_backup()
+            dc_leftfront_backup()
+            dc_rightfront_backup()
 
         
 
