@@ -180,8 +180,8 @@ while True:
     except:
         print("interrupt!!!!!!!!!")
         GPIO.cleanup()
-        enA_pwm_back.stop()
-        enB_pwm_back.stop()
-        enA_pwm_front.stop()
-        enB_pwm_front.stop()
+        #enA_pwm_back.stop()
+        #enB_pwm_back.stop()
+        #enA_pwm_front.stop()
+        #enB_pwm_front.stop()
         exit(1)
