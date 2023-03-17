@@ -31,7 +31,7 @@ ln4_front=27
 #앞으로가기
 def dc_rightback():
     
-    enA_pwm_back.ChangeDutyCycle(10)
+    enA_pwm_back.ChangeDutyCycle(100)
 
     #앞으로가기
     GPIO.output(ln1_back, 0)
