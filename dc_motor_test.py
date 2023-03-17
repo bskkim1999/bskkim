@@ -70,7 +70,7 @@ def dc_rightfront():
 #뒤로가기
 def dc_rightback_backup():
     
-    enA_pwm_back.ChangeDutyCycle(100)
+    enA_pwm_back.ChangeDutyCycle(10)
 
     #뒤로가기
     GPIO.output(ln1_back, 1)
@@ -80,7 +80,7 @@ def dc_rightback_backup():
 
 def dc_leftback_backup():
     
-    enB_pwm_back.ChangeDutyCycle(100)
+    enB_pwm_back.ChangeDutyCycle(10)
 
     #뒤로가기
     GPIO.output(ln3_back, 0)
@@ -89,7 +89,7 @@ def dc_leftback_backup():
     return None
 
 def dc_leftfront_backup():
-    enB_pwm_front.ChangeDutyCycle(100)
+    enB_pwm_front.ChangeDutyCycle(10)
 
     #뒤로가기
     GPIO.output(ln3_front, 1)
@@ -98,7 +98,7 @@ def dc_leftfront_backup():
     return None
 
 def dc_rightfront_backup():
-    enA_pwm_front.ChangeDutyCycle(100)
+    enA_pwm_front.ChangeDutyCycle(10)
 
     #뒤로가기
     GPIO.output(ln1_front, 0)
