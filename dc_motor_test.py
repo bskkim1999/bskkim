@@ -182,6 +182,6 @@ while True:
         GPIO.cleanup()
         enA_pwm_back.stop()
         enB_pwm_back.stop()
-        enA_pwm_back.stop()
+        enA_pwm_front.stop()
         enB_pwm_front.stop()
         exit(1)
