@@ -12,9 +12,9 @@ ln1_back=20
 ln2_back=21
 #왼쪽 뒷바퀴
 enB_back=8
-ln3_back=7
-ln4_back=1
-
+ln3_back=1
+ln4_back=7
+#-------------------------
 ##앞바퀴##
 power_left=19
 #오른쪽 앞바퀴
@@ -23,9 +23,9 @@ ln1_front=3
 ln2_front=4
 
 #왼쪽 앞바퀴
-enB_front=17
-ln3_front=27
-ln4_front=22
+enB_front=22
+ln3_front=17
+ln4_front=27
 
 #==================================================================================
 #앞으로가기
@@ -180,6 +180,8 @@ while True:
     except:
         print("interrupt!!!!!!!!!")
         GPIO.cleanup()
-        #enA_pwm_back.stop()
-        #enB_pwm_back.stop()
+        enA_pwm_back.stop()
+        enB_pwm_back.stop()
+        enA_pwm_back.stop()
+        enB_pwm_front.stop()
         exit(1)
