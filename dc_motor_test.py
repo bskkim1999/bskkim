@@ -106,6 +106,16 @@ def dc_rightfront_backup():
 
     return None
 
+#정지하기
+def dc_stop():
+    GPIO.output(ln1_front, 0)
+    GPIO.output(ln2_front, 0)
+    GPIO.output(ln3_front, 0)
+    GPIO.output(ln4_front, 0)
+    GPIO.output(ln1_back, 0)
+    GPIO.output(ln2_back, 0)
+    GPIO.output(ln3_back, 0)
+    GPIO.output(ln3_back, 0)
 
 #==================================================================================
 GPIO.setmode(GPIO.BCM)
@@ -174,6 +184,9 @@ while True:
             dc_leftback()
             dc_rightfront_backup()
             dc_rightback_backup()
+
+        elif direction=="r":
+            dc_stop()
 
     except:
         print("interrupt!!!!!!!!!")
