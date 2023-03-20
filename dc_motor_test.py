@@ -153,7 +153,7 @@ while True:
         dc_leftfront()
         dc_rightfront()
 
-        """
+        
         direction=input("write w or s or a: ")
         
         
@@ -175,7 +175,7 @@ while True:
             dc_rightfront()
             dc_leftfront()
 
-        """
+        
 
     except:
         print("interrupt!!!!!!!!!")
