@@ -7,7 +7,7 @@ import time
 ##뒷바퀴##
 power_right=26
 #오른쪽 뒷바퀴
-enA_back=16
+enA_back=14
 ln1_back=20
 ln2_back=21
 #왼쪽 뒷바퀴
