@@ -92,8 +92,8 @@ def dc_leftfront_backup():
     enB_pwm_front.ChangeDutyCycle(100)
 
     #뒤로가기
-    GPIO.output(ln3_front, 1)
-    GPIO.output(ln4_front, 0)
+    GPIO.output(ln3_front, 0)
+    GPIO.output(ln4_front, 1)
 
     return None
 
