@@ -169,7 +169,11 @@ while True:
             dc_rightfront()
             dc_rightback()
 
-        
+        elif direction=="d":
+            dc_leftfront()
+            dc_leftback()
+            dc_rightfront_backup()
+            dc_rightback_backup()
 
     except:
         print("interrupt!!!!!!!!!")
