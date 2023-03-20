@@ -175,8 +175,8 @@ while True:
         print("interrupt!!!!!!!!!")
         GPIO.cleanup()
         #실험결과, cleanup()함수호출을 통해서 pwm종료가 가능하다.
-        #enA_pwm_back.stop()
-        #enB_pwm_back.stop()
-        #enA_pwm_front.stop()
-        #enB_pwm_front.stop()
+        enA_pwm_back.stop()
+        enB_pwm_back.stop()
+        enA_pwm_front.stop()
+        enB_pwm_front.stop()
         exit(1)
