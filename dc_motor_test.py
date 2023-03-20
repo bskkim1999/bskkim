@@ -148,12 +148,6 @@ while True:
         GPIO.output(power_right, 1)
         GPIO.output(power_left, 1)
         
-        dc_rightback()
-        dc_leftback()
-        dc_leftfront()
-        dc_rightfront()
-
-        
         direction=input("write w or s or a: ")
         
         
