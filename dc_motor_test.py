@@ -167,7 +167,7 @@ while True:
             dc_leftback_backup()
             dc_leftfront_backup()
             dc_rightfront()
-            dc_leftfront()
+            dc_rightback()
 
         
 
