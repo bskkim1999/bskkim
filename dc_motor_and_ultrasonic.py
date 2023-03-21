@@ -136,11 +136,11 @@ def distance():
     # save StartTime
     while GPIO.input(GPIO_ECHO) == 0:
         StartTime = time.time()
- 
+    
     # save time of arrival
     while GPIO.input(GPIO_ECHO) == 1:
         StopTime = time.time()
- 
+    print("b")
     # time difference between start and arrival
     TimeElapsed = StopTime - StartTime
     # multiply with the sonic speed (34300 cm/s)
@@ -158,7 +158,7 @@ def find_median():
     #리스트에 거리값을 대입한다.
     for j in range(len(list)):
         list[j]=distance()
-
+    print("a")
     #자료를 오름차순으로 정렬한다.
     list.sort()
 
@@ -222,7 +222,7 @@ while True:
             dc_stop()
 
         time.sleep(0.05)
-        
+        print("C")
         
 
     except:
