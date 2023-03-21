@@ -228,7 +228,7 @@ while True:
         if find_median()<=30.0:
             dc_stop()
 
-        time.sleep(0.3)
+        time.sleep(0.2)
         
         
 
