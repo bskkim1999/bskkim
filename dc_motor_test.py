@@ -115,7 +115,7 @@ def dc_stop():
     GPIO.output(ln1_back, 0)
     GPIO.output(ln2_back, 0)
     GPIO.output(ln3_back, 0)
-    GPIO.output(ln3_back, 0)
+    GPIO.output(ln4_back, 0)
 
 #==================================================================================
 GPIO.setmode(GPIO.BCM)
