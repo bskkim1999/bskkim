@@ -221,20 +221,20 @@ while True:
         if find_median()<=30.0:
             #멈춘다.
             dc_stop()
-            time.sleep(1)
+            time.sleep(1) #1초
             #후진한다.
             dc_rightback_backup(50)
             dc_leftback_backup(50)
             dc_leftfront_backup(50)
             dc_rightfront_backup(50)
-            time.sleep(0.7)
+            time.sleep(0.7)  #0.7초
             
             #왼쪽으로 튼다.
             dc_leftback_backup(70)
             dc_leftfront_backup(70)
             dc_rightfront(70)
             dc_rightback(70)
-            time.sleep(0.5)
+            time.sleep(0.5)  #0.5초
 
         else:
             #전진한다.
