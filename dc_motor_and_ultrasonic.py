@@ -125,14 +125,14 @@ def dc_stop():
 def distance():
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER, 1)
-    print("d")
+    
     # set Trigger after 0.01ms to LOW
     time.sleep(0.00001)
     GPIO.output(GPIO_TRIGGER, 0)
  
     StartTime = time.time()
     StopTime = time.time()
-    print("b")
+    
     # save StartTime
     while GPIO.input(GPIO_ECHO) == 0:
         StartTime = time.time()
@@ -141,15 +141,13 @@ def distance():
     # save time of arrival
     while GPIO.input(GPIO_ECHO) == 1:
         StopTime = time.time()
-        print("stoptime")
-    
-    print("c")
+        
     # time difference between start and arrival
     TimeElapsed = StopTime - StartTime
     # multiply with the sonic speed (34300 cm/s)
     # and divide by 2, because there and back
     distance2 = (TimeElapsed * 34300) / 2
- 
+    print ("Measured Distance = %.1f cm" % dist)
     return distance2
 #----------------------------------------------
 #중앙값 찾기
