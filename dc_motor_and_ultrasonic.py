@@ -218,16 +218,15 @@ enB_pwm_front.start(0)
 while True:
     try:
         
-        #전진한다.
-        dc_rightback()
-        dc_leftback()
-        dc_leftfront()
-        dc_rightfront()
-
         if find_median()<=30.0:
             print("stop!!")
             dc_stop()
-
+        else:
+            #전진한다.
+            dc_rightback()
+            dc_leftback()
+            dc_leftfront()
+            dc_rightfront()
         
     except:
         print("interrupt!!!!!!!!!")
