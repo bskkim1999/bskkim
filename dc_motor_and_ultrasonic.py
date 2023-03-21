@@ -162,7 +162,7 @@ def find_median():
         #print("a")
         tmp=distance()
         list[j]=tmp
-        time.sleep(0.001)
+        time.sleep(0.01)
         
     
     #자료를 오름차순으로 정렬한다.
