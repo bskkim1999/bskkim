@@ -136,7 +136,7 @@ def distance():
     # save StartTime
     while GPIO.input(GPIO_ECHO) == 0:
         StartTime = time.time()
-        print("starttime:{}".format(StartTime))
+       
     
     # save time of arrival
     while GPIO.input(GPIO_ECHO) == 1:
@@ -164,6 +164,7 @@ def find_median():
         print("a")
         tmp=distance()
         list[j]=tmp
+        time.sleep(0.1)
         
         
     
