@@ -157,10 +157,10 @@ def find_median():
     
     #리스트에 거리값을 대입한다.
     for j in range(len(list)):
+        print("a")
         tmp=distance()
         list[j]=tmp
         
-    
     
     #자료를 오름차순으로 정렬한다.
     list.sort()
