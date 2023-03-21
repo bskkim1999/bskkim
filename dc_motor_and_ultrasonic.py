@@ -241,6 +241,7 @@ while True:
                 
                 if find_median()>=70:
                     break
+                    time.sleep(3)
 
                 
         
