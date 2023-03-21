@@ -33,9 +33,9 @@ GPIO_ECHO = 15
 
 #======================================function==========================================================
 #앞으로가기
-def dc_rightback():
+def dc_rightback(dutycycle):
     
-    enA_pwm_back.ChangeDutyCycle(100)
+    enA_pwm_back.ChangeDutyCycle(dutycycle)
 
     #앞으로가기
     GPIO.output(ln1_back, 0)
@@ -43,9 +43,9 @@ def dc_rightback():
 
     return None
 
-def dc_leftback():
+def dc_leftback(dutycycle):
     
-    enB_pwm_back.ChangeDutyCycle(100)
+    enB_pwm_back.ChangeDutyCycle(dutycycle)
 
     #앞으로가기
     GPIO.output(ln3_back, 1)
@@ -53,8 +53,8 @@ def dc_leftback():
 
     return None
 
-def dc_leftfront():
-    enB_pwm_front.ChangeDutyCycle(100)
+def dc_leftfront(dutycycle):
+    enB_pwm_front.ChangeDutyCycle(dutycycle)
 
     #앞으로가기
     GPIO.output(ln3_front, 1)
@@ -62,8 +62,8 @@ def dc_leftfront():
 
     return None
 
-def dc_rightfront():
-    enA_pwm_front.ChangeDutyCycle(100)
+def dc_rightfront(dutycycle):
+    enA_pwm_front.ChangeDutyCycle(dutycycle)
 
     #앞으로가기
     GPIO.output(ln1_front, 1)
@@ -72,9 +72,9 @@ def dc_rightfront():
     return None
 #--------------------------------------------
 #뒤로가기
-def dc_rightback_backup():
+def dc_rightback_backup(dutycycle):
     
-    enA_pwm_back.ChangeDutyCycle(100)
+    enA_pwm_back.ChangeDutyCycle(dutycycle)
 
     #뒤로가기
     GPIO.output(ln1_back, 1)
@@ -82,9 +82,9 @@ def dc_rightback_backup():
 
     return None
 
-def dc_leftback_backup():
+def dc_leftback_backup(dutycycle):
     
-    enB_pwm_back.ChangeDutyCycle(100)
+    enB_pwm_back.ChangeDutyCycle(dutycycle)
 
     #뒤로가기
     GPIO.output(ln3_back, 0)
@@ -92,8 +92,8 @@ def dc_leftback_backup():
 
     return None
 
-def dc_leftfront_backup():
-    enB_pwm_front.ChangeDutyCycle(100)
+def dc_leftfront_backup(dutycycle):
+    enB_pwm_front.ChangeDutyCycle(dutycycle)
 
     #뒤로가기
     GPIO.output(ln3_front, 0)
@@ -101,8 +101,8 @@ def dc_leftfront_backup():
 
     return None
 
-def dc_rightfront_backup():
-    enA_pwm_front.ChangeDutyCycle(100)
+def dc_rightfront_backup(dutycycle):
+    enA_pwm_front.ChangeDutyCycle(dutycycle)
 
     #뒤로가기
     GPIO.output(ln1_front, 0)
@@ -223,25 +223,25 @@ while True:
             dc_stop()
             time.sleep(1)
             #후진한다.
-            dc_rightback_backup()
-            dc_leftback_backup()
-            dc_leftfront_backup()
-            dc_rightfront_backup()
+            dc_rightback_backup(50)
+            dc_leftback_backup(50)
+            dc_leftfront_backup(50)
+            dc_rightfront_backup(50)
             time.sleep(0.7)
             
             #왼쪽으로 튼다.
-            dc_leftback_backup()
-            dc_leftfront_backup()
-            dc_rightfront()
-            dc_rightback()
+            dc_leftback_backup(70)
+            dc_leftfront_backup(70)
+            dc_rightfront(70)
+            dc_rightback(70)
             time.sleep(0.5)
 
         else:
             #전진한다.
-            dc_rightback()
-            dc_leftback()
-            dc_leftfront()
-            dc_rightfront()
+            dc_rightback(100)
+            dc_leftback(100)
+            dc_leftfront(100)
+            dc_rightfront(100)
         
     except:
         print("interrupt!!!!!!!!!")
