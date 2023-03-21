@@ -197,11 +197,14 @@ while True:
         dc_leftback()
         dc_leftfront()
         dc_rightfront()
-        
 
         dist = distance()
         print ("Measured Distance = %.1f cm" % dist)
-        time.sleep(0.3)
+
+        if dist<=30.0:
+            dc_stop()
+
+        time.sleep(0.05)
         
         
 
