@@ -172,7 +172,7 @@ def find_median():
     idx=len(list)//2
     median=list[idx]
     
-    print ("Measured Distance = %.1f cm" % median)
+    #print ("Measured Distance = %.1f cm" % median)
 
     return median
 
