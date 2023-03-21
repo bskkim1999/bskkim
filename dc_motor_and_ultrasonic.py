@@ -159,7 +159,7 @@ def find_median():
     
     #리스트에 거리값을 대입한다.
     for j in range(len(list)):
-        print("a")
+        #print("a")
         tmp=distance()
         list[j]=tmp
         time.sleep(0.1)
@@ -225,7 +225,7 @@ while True:
         dc_leftfront()
         dc_rightfront()
 
-        if distance()<=30.0:
+        if find_median()<=30.0:
             dc_stop()
 
         time.sleep(0.1)
