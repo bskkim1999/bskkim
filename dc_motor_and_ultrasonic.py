@@ -234,7 +234,7 @@ while True:
             dc_leftfront_backup()
             dc_rightfront()
             dc_rightback()
-            time.sleep(1)
+            time.sleep(0.5)
 
         else:
             #전진한다.
