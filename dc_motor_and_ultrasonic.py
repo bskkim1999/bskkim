@@ -149,6 +149,26 @@ def distance():
  
     return distance
 
+def find_median():
+    idx=0
+    median=0
+
+    list = [0 for i in range(8)] #리스트 길이를 지정하고, 0으로 초기화함.
+    
+    #리스트에 거리값을 대입한다.
+    for j in range(len(list)):
+        list[j]=distance()
+
+    #자료를 오름차순으로 정렬한다.
+    list.sort()
+
+    #최종적으로 중앙값을 도출한다.
+    idx=len(list)//2+1
+    median=list[idx]
+    
+    print ("Measured Distance = %.1f cm" % median)
+
+    return median
 
 #=================================setup======================================
 #dc모터
@@ -198,10 +218,7 @@ while True:
         dc_leftfront()
         dc_rightfront()
 
-        dist = distance()
-        print ("Measured Distance = %.1f cm" % dist)
-
-        if dist<=30.0:
+        if find_median()<=30.0:
             dc_stop()
 
         time.sleep(0.05)
