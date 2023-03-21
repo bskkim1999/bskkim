@@ -229,9 +229,6 @@ while True:
             dc_stop()
 
         
-        
-        
-
     except:
         print("interrupt!!!!!!!!!")
         GPIO.cleanup()
