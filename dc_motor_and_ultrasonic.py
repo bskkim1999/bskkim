@@ -227,7 +227,7 @@ while True:
             dc_leftback_backup()
             dc_leftfront_backup()
             dc_rightfront_backup()
-            time.sleep(1)
+            time.sleep(0.7)
             
             #왼쪽으로 튼다.
             dc_leftback_backup()
