@@ -148,7 +148,8 @@ def distance():
     distance2 = (TimeElapsed * 34300) / 2
  
     return distance2
-
+#----------------------------------------------
+#중앙값 찾기
 def find_median():
     idx=0
     median=0
@@ -160,7 +161,6 @@ def find_median():
         print("a")
         tmp=distance()
         list[j]=tmp
-        print("{}".format(list[j]))
         
     
     #자료를 오름차순으로 정렬한다.
