@@ -220,9 +220,12 @@ while True:
         
         if find_median()<=30.0:
             #멈춘다.
-            dc_stop()
-            
-
+            #dc_stop()
+            #후진한다.
+            dc_rightback_backup()
+            dc_leftback_backup()
+            dc_leftfront_backup()
+            dc_rightfront_backup()
             
         else:
             #전진한다.
