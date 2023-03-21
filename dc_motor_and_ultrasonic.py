@@ -147,7 +147,7 @@ def distance():
     # multiply with the sonic speed (34300 cm/s)
     # and divide by 2, because there and back
     distance2 = (TimeElapsed * 34300) / 2
-    print ("Measured Distance = %.1f cm" % dist)
+    print ("Measured Distance = %.1f cm" % distance2)
     return distance2
 #----------------------------------------------
 #중앙값 찾기
