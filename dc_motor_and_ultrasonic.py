@@ -227,7 +227,7 @@ while True:
         dc_leftfront()
         dc_rightfront()
 
-        if find_median()<=30.0:
+        if distance()<=30.0:
             dc_stop()
 
         time.sleep(0.1)
