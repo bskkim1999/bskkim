@@ -119,20 +119,20 @@ def dc_stop():
     GPIO.output(ln1_back, 0)
     GPIO.output(ln2_back, 0)
     GPIO.output(ln3_back, 0)
-    GPIO.output(ln3_back, 0)
+    GPIO.output(ln4_back, 0)
 #-----------------------------------------------
 #초음파센서
 def distance():
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER, 1)
- 
+    print("d")
     # set Trigger after 0.01ms to LOW
     time.sleep(0.00001)
     GPIO.output(GPIO_TRIGGER, 0)
  
     StartTime = time.time()
     StopTime = time.time()
- 
+    print("b")
     # save StartTime
     while GPIO.input(GPIO_ECHO) == 0:
         StartTime = time.time()
@@ -141,6 +141,7 @@ def distance():
     while GPIO.input(GPIO_ECHO) == 1:
         StopTime = time.time()
     
+    print("c")
     # time difference between start and arrival
     TimeElapsed = StopTime - StartTime
     # multiply with the sonic speed (34300 cm/s)
@@ -161,7 +162,7 @@ def find_median():
         print("a")
         tmp=distance()
         list[j]=tmp
-        print(list)
+        
         
     
     #자료를 오름차순으로 정렬한다.
