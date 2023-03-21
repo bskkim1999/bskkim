@@ -155,7 +155,7 @@ def find_median():
     idx=0
     median=0
 
-    list = [0 for i in range(8)] #리스트 길이를 지정하고, 0으로 초기화함.
+    list = [0 for i in range(3)] #리스트 길이를 지정하고, 0으로 초기화함.
     
     #리스트에 거리값을 대입한다.
     for j in range(len(list)):
