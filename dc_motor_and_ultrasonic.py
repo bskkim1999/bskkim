@@ -170,7 +170,7 @@ def find_median():
     list.sort()
 
     #최종적으로 중앙값을 도출한다.
-    idx=len(list)//2+1
+    idx=len(list)//2
     median=list[idx]
     
     print ("Measured Distance = %.1f cm" % median)
