@@ -225,6 +225,7 @@ while True:
         dc_rightfront()
 
         if find_median()<=30.0:
+            print("stop!!")
             dc_stop()
 
         
