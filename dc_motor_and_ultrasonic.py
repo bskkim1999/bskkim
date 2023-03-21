@@ -224,10 +224,10 @@ while True:
             dc_stop()
             time.sleep(1) #1초
             #후진한다.
-            dc_rightback_backup(50)
-            dc_leftback_backup(50)
-            dc_leftfront_backup(50)
-            dc_rightfront_backup(50)
+            dc_rightback_backup(100)
+            dc_leftback_backup(100)
+            dc_leftfront_backup(100)
+            dc_rightfront_backup(100)
             time.sleep(0.7)  #0.7초
             
             #왼쪽으로 튼다.
