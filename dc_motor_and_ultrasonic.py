@@ -136,10 +136,12 @@ def distance():
     # save StartTime
     while GPIO.input(GPIO_ECHO) == 0:
         StartTime = time.time()
+        print("starttime")
     
     # save time of arrival
     while GPIO.input(GPIO_ECHO) == 1:
         StopTime = time.time()
+        print("stoptime")
     
     print("c")
     # time difference between start and arrival
