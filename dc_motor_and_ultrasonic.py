@@ -219,8 +219,8 @@ while True:
     try:
         
         if find_median()<=30.0:
-            print("stop!!")
             dc_stop()
+        
         else:
             #전진한다.
             dc_rightback()
