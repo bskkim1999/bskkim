@@ -222,20 +222,25 @@ while True:
             dc_stop()
             time.sleep(1)
 
+            #후진한다.
             dc_rightback_backup()
             dc_leftback_backup()
             dc_leftfront_backup()
             dc_rightfront_backup()
             time.sleep(1)
 
-            if find_median()>=70:
-                dc_stop()
+            while True:
+                
+                #회전한다.
+                dc_leftback_backup()
+                dc_leftfront_backup()
+                dc_rightfront()
+                dc_rightback()
+                #회전하다가 장애물과의 거리가 70cm 이상이면 다시 앞으로 간다.
+                if find_median()>=70:
+                    break
 
-            else:
-                dc_leftfront()
-                dc_leftback()
-                dc_rightfront_backup()
-                dc_rightback_backup()
+                
         
         else:
             #전진한다.
