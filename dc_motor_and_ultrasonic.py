@@ -227,7 +227,7 @@ while True:
             dc_stop()
 
         time.sleep(0.05)
-        print("C")
+        
         
 
     except:
