@@ -230,13 +230,14 @@ while True:
             time.sleep(1)
 
             while True:
+                #회전하다가 장애물과의 거리가 70cm 이상이면 다시 앞으로 간다.
                 
                 #회전한다.
                 dc_leftback_backup()
                 dc_leftfront_backup()
                 dc_rightfront()
                 dc_rightback()
-                #회전하다가 장애물과의 거리가 70cm 이상이면 다시 앞으로 간다.
+                
                 if find_median()>=70:
                     break
 
