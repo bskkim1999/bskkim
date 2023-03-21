@@ -228,7 +228,14 @@ while True:
             dc_rightfront_backup()
             time.sleep(1)
 
-            
+            if find_median()>=70:
+                dc_stop()
+
+            else:
+                dc_leftfront()
+                dc_leftback()
+                dc_rightfront_backup()
+                dc_rightback_backup()
         
         else:
             #전진한다.
