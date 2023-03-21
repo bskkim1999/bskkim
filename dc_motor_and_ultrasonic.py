@@ -162,7 +162,7 @@ def find_median():
         #print("a")
         tmp=distance()
         list[j]=tmp
-        #time.sleep(0.1)
+        time.sleep(0.01)
         
         
     
@@ -228,7 +228,7 @@ while True:
         if find_median()<=30.0:
             dc_stop()
 
-        time.sleep(0.2)
+        
         
         
 
