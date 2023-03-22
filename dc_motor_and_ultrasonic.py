@@ -28,8 +28,18 @@ ln3_front=17
 ln4_front=27
 
 #<<초음파센서>>
-GPIO_TRIGGER = 18
-GPIO_ECHO = 15
+#전방(가운데)
+GPIO_TRIGGER_mid = 18
+GPIO_ECHO_mid = 15
+
+#왼쪽
+GPIO_TRIGGER_left=16
+GPIO_ECHO_left=12
+
+#오른쪽
+GPIO_TRIGGER_right=23
+GPIO_ECHO_right=24
+
 
 #======================================function==========================================================
 #dutycycle : 0 ~ 100
@@ -123,24 +133,25 @@ def dc_stop():
     GPIO.output(ln4_back, 0)
 #-----------------------------------------------
 #초음파센서
-def distance():
+#전방(가운데)
+def distance_mid():
     # set Trigger to HIGH
-    GPIO.output(GPIO_TRIGGER, 1)
+    GPIO.output(GPIO_TRIGGER_mid, 1)
     
     # set Trigger after 0.01ms to LOW
     time.sleep(0.00001)
-    GPIO.output(GPIO_TRIGGER, 0)
+    GPIO.output(GPIO_TRIGGER_mid, 0)
  
     StartTime = time.time()
     StopTime = time.time()
     
     # save StartTime
-    while GPIO.input(GPIO_ECHO) == 0:
+    while GPIO.input(GPIO_ECHO_mid) == 0:
         StartTime = time.time()
        
     
     # save time of arrival
-    while GPIO.input(GPIO_ECHO) == 1:
+    while GPIO.input(GPIO_ECHO_mid) == 1:
         StopTime = time.time()
         
     # time difference between start and arrival
@@ -150,6 +161,65 @@ def distance():
     distance2 = (TimeElapsed * 34300) / 2
     #print ("Measured Distance = %.1f cm" % distance2)
     return distance2
+
+#왼쪽 초음파센서
+def distance_left():
+    # set Trigger to HIGH
+    GPIO.output(GPIO_TRIGGER_left, 1)
+    
+    # set Trigger after 0.01ms to LOW
+    time.sleep(0.00001)
+    GPIO.output(GPIO_TRIGGER_left, 0)
+ 
+    StartTime = time.time()
+    StopTime = time.time()
+    
+    # save StartTime
+    while GPIO.input(GPIO_ECHO_left) == 0:
+        StartTime = time.time()
+       
+    
+    # save time of arrival
+    while GPIO.input(GPIO_ECHO_left) == 1:
+        StopTime = time.time()
+        
+    # time difference between start and arrival
+    TimeElapsed = StopTime - StartTime
+    # multiply with the sonic speed (34300 cm/s)
+    # and divide by 2, because there and back
+    distance2 = (TimeElapsed * 34300) / 2
+    #print ("Measured Distance = %.1f cm" % distance2)
+    return distance2
+
+#오른쪽 초음파센서
+def distance_right():
+    # set Trigger to HIGH
+    GPIO.output(GPIO_TRIGGER_right, 1)
+    
+    # set Trigger after 0.01ms to LOW
+    time.sleep(0.00001)
+    GPIO.output(GPIO_TRIGGER_right, 0)
+ 
+    StartTime = time.time()
+    StopTime = time.time()
+    
+    # save StartTime
+    while GPIO.input(GPIO_ECHO_right) == 0:
+        StartTime = time.time()
+       
+    
+    # save time of arrival
+    while GPIO.input(GPIO_ECHO_right) == 1:
+        StopTime = time.time()
+        
+    # time difference between start and arrival
+    TimeElapsed = StopTime - StartTime
+    # multiply with the sonic speed (34300 cm/s)
+    # and divide by 2, because there and back
+    distance2 = (TimeElapsed * 34300) / 2
+    #print ("Measured Distance = %.1f cm" % distance2)
+    return distance2
+
 #----------------------------------------------
 #중앙값 찾기
 def find_median():
@@ -160,8 +230,8 @@ def find_median():
     
     #리스트에 거리값을 대입한다.
     for j in range(len(list)):
-        #print("a")
-        tmp=distance()
+        
+        tmp=distance_mid()
         list[j]=tmp
         time.sleep(0.01)
         
@@ -173,7 +243,7 @@ def find_median():
     idx=len(list)//2
     median=list[idx]
     
-    print ("Measured Distance = %.1f cm" % median)
+    #print ("Measured Distance = %.1f cm" % median)
 
     return median
 
@@ -198,9 +268,19 @@ GPIO.setup(enB_front, GPIO.OUT)
 
 #초음파센서
 #set GPIO direction (IN / OUT)
-GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
-GPIO.setup(GPIO_ECHO, GPIO.IN)
+#mid 가운데 전방
+GPIO.setup(GPIO_TRIGGER_mid, GPIO.OUT)
+GPIO.setup(GPIO_ECHO_mid, GPIO.IN)
+#left 왼쪽
+GPIO.setup(GPIO_TRIGGER_left, GPIO.OUT)
+GPIO.setup(GPIO_ECHO_left, GPIO.IN)
 
+#right 오른쪽
+GPIO.setup(GPIO_TRIGGER_right, GPIO.OUT)
+GPIO.setup(GPIO_ECHO_right, GPIO.IN)
+
+
+#--------------------------------------
 #pwm
 enA_pwm_back=GPIO.PWM(enA_back, 100)
 enA_pwm_back.start(0)
@@ -218,7 +298,10 @@ enB_pwm_front.start(0)
 #==============================================main task==============================
 while True:
     try:
-        
+        print ("Mid = %.1f cm" % find_median(), end=" " )
+        print ("left = %.1f cm" % distance_left(), end=" " )
+        print ("right = %.1f cm" % distance_right() )
+        """
         if find_median()<=30.0:
             #멈춘다.
             dc_stop()
@@ -228,8 +311,9 @@ while True:
             dc_leftback_backup(70)
             dc_leftfront_backup(70)
             dc_rightfront_backup(70)
-            time.sleep(0.7)  #0.7초
+            time.sleep(1)  #1초
             
+
             #왼쪽으로 튼다.
             dc_leftback_backup(100)
             dc_leftfront_backup(100)
@@ -243,7 +327,7 @@ while True:
             dc_leftback(100)
             dc_leftfront(100)
             dc_rightfront(100)
-        
+        """
     except:
         print("interrupt!!!!!!!!!")
         GPIO.cleanup()
