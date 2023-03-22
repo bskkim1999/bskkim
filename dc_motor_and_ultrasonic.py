@@ -351,7 +351,7 @@ while True:
             dc_leftfront(100)
             dc_rightfront(100)
         
-        time.sleep(0.01)
+        time.sleep(0.05)
     
     except:
         print("interrupt!!!!!!!!!")
