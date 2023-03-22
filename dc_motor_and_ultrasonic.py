@@ -298,12 +298,25 @@ enB_pwm_front.start(0)
 #==============================================main task==============================
 while True:
     try:
+
+        left=distance_left()
+        right=distance_right()
+        wherego=0
+
         print ("Mid = %.1f cm" % find_median(), end=" " )
         print ("left = %.1f cm" % distance_left(), end=" " )
         print ("right = %.1f cm" % distance_right() )
-        time.sleep(0.1)
-        """
+        
+        
         if find_median()<=30.0:
+            
+            #방향판단
+            if left<right:
+                wherego=1
+
+            else:
+                wherego=-1
+
             #멈춘다.
             dc_stop()
             time.sleep(1) #1초
@@ -314,13 +327,19 @@ while True:
             dc_rightfront_backup(70)
             time.sleep(1)  #1초
             
-
-            #왼쪽으로 튼다.
-            dc_leftback_backup(100)
-            dc_leftfront_backup(100)
-            dc_rightfront(100)
-            dc_rightback(100)
-            time.sleep(0.5)  #0.5초
+            if wherego== 1:
+                #오른쪽으로 튼다.
+                dc_leftfront()
+                dc_leftback()
+                dc_rightfront_backup()
+                dc_rightback_backup()
+            
+            elif wherego== -1:
+                #왼쪽으로 튼다.
+                dc_leftback_backup(100)
+                dc_leftfront_backup(100)
+                dc_rightfront(100)
+                dc_rightback(100)
 
         else:
             #전진한다.
@@ -328,7 +347,8 @@ while True:
             dc_leftback(100)
             dc_leftfront(100)
             dc_rightfront(100)
-        """
+        
+        time.sleep(0.01)
     except:
         print("interrupt!!!!!!!!!")
         GPIO.cleanup()
