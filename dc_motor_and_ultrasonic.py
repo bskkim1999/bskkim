@@ -325,7 +325,7 @@ while True:
             dc_leftback_backup(70)
             dc_leftfront_backup(70)
             dc_rightfront_backup(70)
-            time.sleep(1)  #1초
+            time.sleep(0.7)  #0.7초
             
             if wherego== 1:
                 #오른쪽으로 튼다.
@@ -333,13 +333,15 @@ while True:
                 dc_leftback()
                 dc_rightfront_backup()
                 dc_rightback_backup()
+                time.sleep(1)  #1초
             
-            elif wherego== -1:
+            else:
                 #왼쪽으로 튼다.
                 dc_leftback_backup(100)
                 dc_leftfront_backup(100)
                 dc_rightfront(100)
                 dc_rightback(100)
+                time.sleep(1)  #1초
 
         else:
             #전진한다.
