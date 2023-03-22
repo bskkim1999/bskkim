@@ -301,6 +301,7 @@ while True:
         print ("Mid = %.1f cm" % find_median(), end=" " )
         print ("left = %.1f cm" % distance_left(), end=" " )
         print ("right = %.1f cm" % distance_right() )
+        time.sleep(0.1)
         """
         if find_median()<=30.0:
             #멈춘다.
