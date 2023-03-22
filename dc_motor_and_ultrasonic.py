@@ -331,10 +331,10 @@ while True:
             print("{}".format(wherego))
             if wherego== 1:
                 #오른쪽으로 튼다.
-                dc_leftfront()
-                dc_leftback()
-                dc_rightfront_backup()
-                dc_rightback_backup()
+                dc_leftfront(100)
+                dc_leftback(100)
+                dc_rightfront_backup(100)
+                dc_rightback_backup(100)
                 time.sleep(1)  #1초
             
             else:
