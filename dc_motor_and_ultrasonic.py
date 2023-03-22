@@ -33,12 +33,12 @@ GPIO_TRIGGER_mid = 18
 GPIO_ECHO_mid = 15
 
 #왼쪽
-GPIO_TRIGGER_left=16
-GPIO_ECHO_left=12
+GPIO_TRIGGER_left=23
+GPIO_ECHO_left=24
 
 #오른쪽
-GPIO_TRIGGER_right=23
-GPIO_ECHO_right=24
+GPIO_TRIGGER_right=16
+GPIO_ECHO_right=12
 
 
 #======================================function==========================================================
