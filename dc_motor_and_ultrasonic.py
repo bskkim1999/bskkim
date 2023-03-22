@@ -218,6 +218,7 @@ def distance_right():
     # and divide by 2, because there and back
     distance2 = (TimeElapsed * 34300) / 2
     #print ("Measured Distance = %.1f cm" % distance2)
+    
     return distance2
 
 #----------------------------------------------
@@ -307,7 +308,7 @@ while True:
         print ("left = %.1f cm" % left, end=" " )
         print ("right = %.1f cm" % right )
         
-        
+        """
         if find_median()<=30.0:
             
             #방향판단
@@ -350,8 +351,8 @@ while True:
             dc_leftfront(100)
             dc_rightfront(100)
         
-        time.sleep(0.1)
-    
+        #time.sleep(0.1)
+    """
     except:
         print("interrupt!!!!!!!!!")
         GPIO.cleanup()
