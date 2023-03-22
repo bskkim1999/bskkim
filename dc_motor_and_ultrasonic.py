@@ -328,6 +328,7 @@ while True:
             dc_rightfront_backup(70)
             time.sleep(0.7)  #0.7초
             
+            print("{}".format(wherego))
             if wherego== 1:
                 #오른쪽으로 튼다.
                 dc_leftfront()
