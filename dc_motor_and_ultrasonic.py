@@ -303,9 +303,9 @@ while True:
         right=distance_right()
         wherego=0
 
-        print ("Mid = %.1f cm" % find_median(), end=" " )
-        print ("left = %.1f cm" % distance_left(), end=" " )
-        print ("right = %.1f cm" % distance_right() )
+        #print ("Mid = %.1f cm" % find_median(), end=" " )
+        #print ("left = %.1f cm" % distance_left(), end=" " )
+        #print ("right = %.1f cm" % distance_right() )
         
         
         if find_median()<=30.0:
@@ -348,7 +348,8 @@ while True:
             dc_leftfront(100)
             dc_rightfront(100)
         
-        time.sleep(0.01)
+        #time.sleep(0.01)
+    
     except:
         print("interrupt!!!!!!!!!")
         GPIO.cleanup()
