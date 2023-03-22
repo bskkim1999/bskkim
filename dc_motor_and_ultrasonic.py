@@ -350,9 +350,9 @@ while True:
             dc_leftback(100)
             dc_leftfront(100)
             dc_rightfront(100)
-        
-        #time.sleep(0.1)
-    """
+    """    
+        time.sleep(0.01)
+    
     except:
         print("interrupt!!!!!!!!!")
         GPIO.cleanup()
