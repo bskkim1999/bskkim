@@ -158,9 +158,9 @@ def distance_mid():
     TimeElapsed = StopTime - StartTime
     # multiply with the sonic speed (34300 cm/s)
     # and divide by 2, because there and back
-    distance2 = (TimeElapsed * 34300) / 2
+    distance1 = (TimeElapsed * 34300) / 2
     #print ("Measured Distance = %.1f cm" % distance2)
-    return distance2
+    return distance1
 
 #왼쪽 초음파센서
 def distance_left():
@@ -216,10 +216,10 @@ def distance_right():
     TimeElapsed = StopTime - StartTime
     # multiply with the sonic speed (34300 cm/s)
     # and divide by 2, because there and back
-    distance2 = (TimeElapsed * 34300) / 2
+    distance3 = (TimeElapsed * 34300) / 2
     #print ("Measured Distance = %.1f cm" % distance2)
     
-    return distance2
+    return distance3
 
 #----------------------------------------------
 #중앙값 찾기
