@@ -321,6 +321,7 @@ while True:
             #멈춘다.
             dc_stop()
             time.sleep(1) #1초
+            """"
             #후진한다.
             dc_rightback_backup(70)
             dc_leftback_backup(70)
@@ -344,6 +345,7 @@ while True:
                 dc_rightfront(100)
                 dc_rightback(100)
                 time.sleep(0.7)  #1초
+            """    
 
         else:
             #전진한다.
