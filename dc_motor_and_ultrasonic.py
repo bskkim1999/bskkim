@@ -319,8 +319,8 @@ while True:
         
         if mid<=31.0:  #멈추는데 감속을 고려하여 37.0으로 설정!
             print("under 30cm!!")
-            dc_stop()
-            """
+            
+            
             #방향판단
             if left<right:
                 wherego=1
@@ -331,8 +331,7 @@ while True:
             #멈춘다.
             dc_stop()
             time.sleep(1) #1초
-            """
-            """"
+            
             #후진한다.
             dc_rightback_backup(70)
             dc_leftback_backup(70)
@@ -340,7 +339,7 @@ while True:
             dc_rightfront_backup(70)
             time.sleep(0.7)  #0.7초
             
-            print("{}".format(wherego))
+            #print("{}".format(wherego))
             if wherego== 1:
                 #오른쪽으로 튼다.
                 dc_leftfront(100)
@@ -356,7 +355,7 @@ while True:
                 dc_rightfront(100)
                 dc_rightback(100)
                 time.sleep(0.7)  #1초
-            """    
+             
 
         else:
             #전진한다.
