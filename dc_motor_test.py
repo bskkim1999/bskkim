@@ -18,9 +18,9 @@ ln4_back=7
 ##앞바퀴##
 power_left=19
 #오른쪽 앞바퀴
-enA_front=2
-ln1_front=3
-ln2_front=4
+enA_front=0
+ln1_front=5
+ln2_front=6
 
 #왼쪽 앞바퀴
 enB_front=22
