@@ -309,12 +309,13 @@ while True:
         wherego=0
         #print("abc")
         print ("Mid = %.1f cm" % find_median(), end=" " )
+        print("findMedian!!")
         print ("left = %.1f cm" % left, end=" " )
         print ("right = %.1f cm" % right )
         
         
         if find_median()<=30.0:
-            print("findMedian!!")
+            print("under 30cm!!")
             dc_stop()
             """
             #방향판단
