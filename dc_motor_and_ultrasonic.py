@@ -308,7 +308,7 @@ while True:
         print ("left = %.1f cm" % distance_left(), end=" " )
         print ("right = %.1f cm" % distance_right() )
         
-        
+        """
         if find_median()<=30.0:
             
             #방향판단
@@ -351,8 +351,8 @@ while True:
             dc_leftback(100)
             dc_leftfront(100)
             dc_rightfront(100)
-        
-        time.sleep(0.2)
+        """
+        #time.sleep(0.2)
     
     except:
         print("interrupt!!!!!!!!!")
