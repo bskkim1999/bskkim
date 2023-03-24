@@ -136,6 +136,7 @@ def dc_stop():
 #전방(가운데)
 def distance_mid():
     # set Trigger to HIGH
+    print("distance_mid function start!!")
     GPIO.output(GPIO_TRIGGER_mid, 1)
     
     # set Trigger after 0.01ms to LOW
@@ -227,6 +228,7 @@ def distance_right():
 #----------------------------------------------
 #중앙값 찾기
 def find_median():
+    print("find_median function start!!")
     idx=0
     median=0
 
