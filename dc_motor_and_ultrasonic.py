@@ -299,14 +299,15 @@ enB_pwm_front.start(0)
 #==============================================main task==============================
 while True:
     try:
-        print("a")
+        print("start!!")
+        
         left=distance_left()
         right=distance_right()
         wherego=0
         #print("abc")
         print ("Mid = %.1f cm" % find_median(), end=" " )
-        print ("left = %.1f cm" % distance_left(), end=" " )
-        print ("right = %.1f cm" % distance_right() )
+        print ("left = %.1f cm" % left, end=" " )
+        print ("right = %.1f cm" % right )
         
         
         if find_median()<=30.0:
