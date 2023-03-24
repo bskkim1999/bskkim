@@ -304,17 +304,18 @@ while True:
     try:
         print("start!!")
         
-        left=distance_left()
-        right=distance_right()
+        #left=distance_left()
+        #right=distance_right()
         wherego=0
         #print("abc")
         print ("Mid = %.1f cm" % find_median(), end=" " )
-        print ("left = %.1f cm" % left, end=" " )
-        print ("right = %.1f cm" % right )
+        #print ("left = %.1f cm" % left, end=" " )
+        #print ("right = %.1f cm" % right )
         
         
         if find_median()<=30.0:
-            
+            print("findMedian!!")
+            """
             #방향판단
             if left<right:
                 wherego=1
@@ -325,6 +326,7 @@ while True:
             #멈춘다.
             dc_stop()
             time.sleep(1) #1초
+            """
             """"
             #후진한다.
             dc_rightback_backup(70)
