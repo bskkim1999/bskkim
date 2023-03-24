@@ -160,6 +160,7 @@ def distance_mid():
     # and divide by 2, because there and back
     distance1 = (TimeElapsed * 34300) / 2
     #print ("Measured Distance = %.1f cm" % distance2)
+    print("mid_finish!!")
     return distance1
 
 #왼쪽 초음파센서
@@ -189,6 +190,7 @@ def distance_left():
     # and divide by 2, because there and back
     distance2 = (TimeElapsed * 34300) / 2
     #print ("Measured Distance = %.1f cm" % distance2)
+    print("left_finish!!")
     return distance2
 
 #오른쪽 초음파센서
@@ -218,7 +220,8 @@ def distance_right():
     # and divide by 2, because there and back
     distance3 = (TimeElapsed * 34300) / 2
     #print ("Measured Distance = %.1f cm" % distance2)
-    
+    print("right_finish!!")
+
     return distance3
 
 #----------------------------------------------
