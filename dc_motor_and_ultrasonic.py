@@ -317,7 +317,7 @@ while True:
         print ("right = %.1f cm" % right )
         
         
-        if mid<=32.0:  #멈추는데 감속을 고려하여 37.0으로 설정!
+        if mid<=30.0:  #멈추는데 감속을 고려하여 37.0으로 설정!
             print("under 30cm!!")
             dc_stop()
             """
