@@ -337,7 +337,7 @@ while True:
             dc_leftback_backup(70)
             dc_leftfront_backup(70)
             dc_rightfront_backup(70)
-            time.sleep(0.4)  #0.7초
+            time.sleep(0.2)  #0.7초
             
             #print("{}".format(wherego))
             if wherego== 1:
