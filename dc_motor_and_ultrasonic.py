@@ -304,17 +304,18 @@ while True:
     try:
         print("start!!")
         
+        mid=find_median()
         left=distance_left()
         right=distance_right()
         wherego=0
         #print("abc")
         
-        print ("Mid = %.1f cm" % find_median(), end=" " )
+        print ("Mid = %.1f cm" % mid, end=" " )
         print ("left = %.1f cm" % left, end=" " )
         print ("right = %.1f cm" % right )
         
         
-        if find_median()<=30.0:
+        if mid<=30.0:
             print("under 30cm!!")
             dc_stop()
             """
