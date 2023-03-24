@@ -299,7 +299,7 @@ enB_pwm_front.start(0)
 #==============================================main task==============================
 while True:
     try:
-
+        print("a")
         left=distance_left()
         right=distance_right()
         wherego=0
