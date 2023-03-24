@@ -317,7 +317,7 @@ while True:
         print ("right = %.1f cm" % right )
         
         
-        if mid<=30.0:
+        if mid<=40.0:
             print("under 30cm!!")
             dc_stop()
             """
