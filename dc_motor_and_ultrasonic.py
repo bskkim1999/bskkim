@@ -354,7 +354,7 @@ while True:
         """
         time.sleep(0.2)
     
-    except:
+    except KeyboardInterrupt:
         print("interrupt!!!!!!!!!")
         GPIO.cleanup()
         #실험결과, cleanup()함수호출을 통해서 pwm종료가 가능하다.
