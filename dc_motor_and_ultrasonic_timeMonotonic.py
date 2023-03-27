@@ -344,8 +344,8 @@ while True:
         print ("right = %.1f cm" % right )
         
         
-        if mid<=31.0:  #멈추는데 감속을 고려하여 37.0으로 설정!
-            print("under 30cm!!")
+        if mid<=31.0:  #멈추는데 감속을 고려하여 31.0으로 설정!
+            print("under 25cm!!")
             
         
             #방향판단
