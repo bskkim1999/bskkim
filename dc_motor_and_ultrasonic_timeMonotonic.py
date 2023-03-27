@@ -141,7 +141,12 @@ def distance_mid():
     GPIO.output(GPIO_TRIGGER_mid, 1)
     
     # set Trigger after 0.01ms to LOW
-    time.sleep(0.00001)
+    while True:
+        current_time = time.monotonic()
+        if current_time - start_time >= 0.00001:
+            start_time=current_time
+            break
+        
     GPIO.output(GPIO_TRIGGER_mid, 0)
  
     StartTime = time.monotonic()
@@ -171,7 +176,12 @@ def distance_left():
     GPIO.output(GPIO_TRIGGER_left, 1)
     
     # set Trigger after 0.01ms to LOW
-    time.sleep(0.00001)
+    while True:
+        current_time = time.monotonic()
+        if current_time - start_time >= 0.00001:
+            start_time=current_time
+            break
+
     GPIO.output(GPIO_TRIGGER_left, 0)
  
     StartTime = time.monotonic()
@@ -201,7 +211,12 @@ def distance_right():
     GPIO.output(GPIO_TRIGGER_right, 1)
     
     # set Trigger after 0.01ms to LOW
-    time.sleep(0.00001)
+    while True:
+        current_time = time.monotonic()
+        if current_time - start_time >= 0.00001:
+            start_time=current_time
+            break
+    
     GPIO.output(GPIO_TRIGGER_right, 0)
  
     StartTime = time.monotonic()
