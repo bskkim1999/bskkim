@@ -347,7 +347,7 @@ while True:
         if mid<=31.0:  #멈추는데 감속을 고려하여 37.0으로 설정!
             print("under 30cm!!")
             
-            
+        
             #방향판단
             if left<right:
                 wherego=1
@@ -358,6 +358,7 @@ while True:
             #멈춘다.
             dc_stop()
             #time.sleep(1) #1초
+            """
             #1초동안 대기한다.
             while True:
                 current_time = time.monotonic()
@@ -410,7 +411,7 @@ while True:
                     if current_time - start_time >= 0.7:
                         start_time=current_time
                         break
-             
+            """
 
         else:
             #전진한다.
