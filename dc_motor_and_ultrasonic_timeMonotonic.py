@@ -259,6 +259,7 @@ def find_median():
         
         tmp=distance_mid()
         list[j]=tmp
+        
         #0.01초대기
         while True:
                 current_time = time.monotonic()
@@ -358,7 +359,7 @@ while True:
             #멈춘다.
             dc_stop()
             #time.sleep(1) #1초
-            """
+            
             #1초동안 대기한다.
             while True:
                 current_time = time.monotonic()
@@ -375,7 +376,7 @@ while True:
             dc_rightfront_backup(70)
             
             
-            #time.sleep(0.2)  #0.7초
+            #time.sleep(0.7)  #0.7초
             #0.7초동안 대기한다.
             while True:
                 current_time = time.monotonic()
@@ -411,7 +412,7 @@ while True:
                     if current_time - start_time >= 0.7:
                         start_time=current_time
                         break
-            """
+            
 
         else:
             #전진한다.
