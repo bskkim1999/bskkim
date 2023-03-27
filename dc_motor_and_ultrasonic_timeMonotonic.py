@@ -136,6 +136,7 @@ def dc_stop():
 #초음파센서
 #전방(가운데)
 def distance_mid():
+    global start_time #전역변수를 지역변수로 가져오기 위하여 global 키워드를 사용한다.
     # set Trigger to HIGH
     print("distance_mid function start!!")
     GPIO.output(GPIO_TRIGGER_mid, 1)
@@ -146,7 +147,7 @@ def distance_mid():
         if current_time - start_time >= 0.00001:
             start_time=current_time
             break
-        
+
     GPIO.output(GPIO_TRIGGER_mid, 0)
  
     StartTime = time.monotonic()
@@ -172,6 +173,7 @@ def distance_mid():
 
 #왼쪽 초음파센서
 def distance_left():
+    global start_time #전역변수를 지역변수로 가져오기 위하여 global 키워드를 사용한다.
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER_left, 1)
     
@@ -207,6 +209,7 @@ def distance_left():
 
 #오른쪽 초음파센서
 def distance_right():
+    global start_time #전역변수를 지역변수로 가져오기 위하여 global 키워드를 사용한다.
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER_right, 1)
     
