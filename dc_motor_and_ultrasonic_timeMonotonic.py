@@ -140,7 +140,7 @@ def distance_mid():
     # set Trigger to HIGH
     print("distance_mid function start!!")
     GPIO.output(GPIO_TRIGGER_mid, 1)
-    print("sss")
+    print("{}".format(GPIO_TRIGGER_mid))
     # set Trigger after 0.01ms to LOW
     while True:
         current_time = time.monotonic()
@@ -149,12 +149,14 @@ def distance_mid():
             break
 
     GPIO.output(GPIO_TRIGGER_mid, 0)
- 
+    
+    print("{}".format(GPIO_TRIGGER_mid))
     StartTime = time.monotonic()
     StopTime = time.monotonic()
     
     # save StartTime
-    while GPIO.input(GPIO_ECHO_mid) == 0:
+    
+    if GPIO.input(GPIO_ECHO_mid) == 0:
         StartTime = time.monotonic()
         print("{}".format(StartTime))
         print("starttime_finish")
@@ -338,6 +340,7 @@ start_time = time.monotonic()  #시작시간측정, 전역변수이다.
 while True:
     try:
         print("start!!")
+        
         
         mid=find_median()
         #left=distance_left()
