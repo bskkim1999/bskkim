@@ -356,9 +356,9 @@ while True:
         print("start!!")
         
         
-        #mid=find_median()
+        mid=find_median()
         #left=distance_left()
-        right=distance_right()
+        #right=distance_right()
         #wherego=0
         #print("abc")
         
