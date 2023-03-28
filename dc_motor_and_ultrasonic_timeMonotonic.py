@@ -367,9 +367,9 @@ while True:
         #print ("right = %.1f cm" % right )
         
         
-        if mid<=25.0:  #멈추는데 감속을 고려하여 31.0으로 설정!
-            print("under 25cm!!")
-            dc_stop()
+        #if mid<=25.0:  #멈추는데 감속을 고려하여 31.0으로 설정!
+         #   print("under 25cm!!")
+        #    dc_stop()
         
             """    
             #방향판단
@@ -438,7 +438,7 @@ while True:
             
             """
 
-        else:
+        #else:
             #전진한다.
             dc_rightback(100)
             dc_leftback(100)
