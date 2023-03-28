@@ -337,7 +337,7 @@ while True:
         mid=find_median()
         left=distance_left()
         #right=distance_right()
-        wherego=0
+        #wherego=0
         #print("abc")
         
         print ("Mid = %.1f cm" % mid, end=" " )
@@ -414,6 +414,7 @@ while True:
                         break
             
         """
+
         else:
             #전진한다.
             dc_rightback(100)
