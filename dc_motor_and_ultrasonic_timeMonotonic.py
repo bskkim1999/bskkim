@@ -245,6 +245,7 @@ def distance_right():
     # save StartTime
     while GPIO.input(GPIO_ECHO_right) == 0:
         StartTime = time.monotonic()
+        print("{}".format(GPIO.input(GPIO_ECHO_right)))
         while True:
             print("abc")
        
