@@ -245,6 +245,8 @@ def distance_right():
     # save StartTime
     while GPIO.input(GPIO_ECHO_right) == 0:
         StartTime = time.monotonic()
+        while True:
+            print("abc")
        
     
     # save time of arrival
@@ -352,9 +354,9 @@ while True:
         print("start!!")
         
         
-        mid=find_median()
+        #mid=find_median()
         #left=distance_left()
-        #right=distance_right()
+        right=distance_right()
         #wherego=0
         #print("abc")
         
