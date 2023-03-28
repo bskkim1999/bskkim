@@ -140,7 +140,7 @@ def distance_mid():
     # set Trigger to HIGH
     print("distance_mid function start!!")
     GPIO.output(GPIO_TRIGGER_mid, 1)
-    
+    print("sss")
     # set Trigger after 0.01ms to LOW
     while True:
         current_time = time.monotonic()
