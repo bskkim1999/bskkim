@@ -349,7 +349,7 @@ while True:
             print("under 25cm!!")
             dc_stop()
         
-        """    
+            """    
             #방향판단
             if left<right:
                 wherego=1
@@ -414,7 +414,7 @@ while True:
                         start_time=current_time
                         break
             
-        """
+            """
 
         else:
             #전진한다.
