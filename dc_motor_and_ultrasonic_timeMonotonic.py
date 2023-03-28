@@ -141,10 +141,10 @@ def distance_mid():
     print("distance_mid function start!!")
     GPIO.output(GPIO_TRIGGER_mid, 1)
     
-    print("triger 1"); 
+    
     # set Trigger after 0.01ms to LOW
     while True:
-        current_time = time.time()
+        current_time = time.monotonic()
         if current_time - start_time >= 0.00001:
             start_time=current_time
             break
@@ -152,33 +152,20 @@ def distance_mid():
 
     GPIO.output(GPIO_TRIGGER_mid, 0)
     
-    
-
-    print("triger 0"); 
-    print("{}".format(GPIO_TRIGGER_mid))
-    StartTime = time.time()
-    StopTime = time.time()
+    StartTime = time.monotonic()
+    StopTime = time.monotonic()
     
     # save StartTime
     
-    if GPIO.input(GPIO_ECHO_mid) == 0:
-        StartTime = time.time()
-        
-        
-        print("{}".format(StartTime))
-        print("starttime_finish")
-
+    while GPIO.input(GPIO_ECHO_mid) == 0:
+        StartTime = time.monotonic()
        
-    print("a")
+    
     # save time of arrival
     while GPIO.input(GPIO_ECHO_mid) == 1:
-        StopTime = time.time()
-        if GPIO.input(GPIO_ECHO_mid)==1:
-            print("{}".format(GPIO.input(GPIO_ECHO_mid)))
-            print("abc")
-        print("endtime_finish")
+        StopTime = time.monotonic()
+        
     
-    print("b")
     # time difference between start and arrival
     TimeElapsed = StopTime - StartTime
     # multiply with the sonic speed (34300 cm/s)
@@ -209,8 +196,6 @@ def distance_left():
     # save StartTime
     while GPIO.input(GPIO_ECHO_left) == 0:
         StartTime = time.monotonic()
-        print("{}".format(StartTime))
-        print("starttime_finish")
        
     
     # save time of arrival
@@ -247,8 +232,6 @@ def distance_right():
     # save StartTime
     while GPIO.input(GPIO_ECHO_right) == 0:
         StartTime = time.monotonic()
-        print("{}".format(StartTime))
-        print("starttime_finish")
         
     
     # save time of arrival
@@ -357,21 +340,20 @@ while True:
         
         
         mid=find_median()
-        #left=distance_left()
-        #right=distance_right()
-        #wherego=0
-        #print("abc")
+        left=distance_left()
+        right=distance_right()
+        wherego=0
         
-        #print ("Mid = %.1f cm" % mid, end=" " )
-        #print ("left = %.1f cm" % left, end=" " )
-        #print ("right = %.1f cm" % right )
+        print ("Mid = %.1f cm" % mid, end=" " )
+        print ("left = %.1f cm" % left, end=" " )
+        print ("right = %.1f cm" % right )
         
         
-        #if mid<=25.0:  #멈추는데 감속을 고려하여 31.0으로 설정!
-         #   print("under 25cm!!")
-        #    dc_stop()
+        if mid<=25.0:  #멈추는데 감속을 고려하여 31.0으로 설정!
+            print("under 25cm!!")
+            dc_stop()
         
-            """    
+                
             #방향판단
             if left<right:
                 wherego=1
@@ -436,9 +418,8 @@ while True:
                         start_time=current_time
                         break
             
-            """
-
-        #else:
+          
+        else:
             #전진한다.
             dc_rightback(100)
             dc_leftback(100)
