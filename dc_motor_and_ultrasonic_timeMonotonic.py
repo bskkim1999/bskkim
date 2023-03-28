@@ -174,6 +174,7 @@ def distance_mid():
     while GPIO.input(GPIO_ECHO_mid) == 1:
         StopTime = time.monotonic()
         while True:
+            print("{}".format(GPIO.input(GPIO_ECHO_mid)))
             print("abc")
         print("endtime_finish")
     
