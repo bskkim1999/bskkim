@@ -148,11 +148,13 @@ def distance_mid():
         if current_time - start_time >= 0.00001:
             start_time=current_time
             break
-    while True:
-        print("abc")
+    
 
     GPIO.output(GPIO_TRIGGER_mid, 0)
     
+    while True:
+        print("abc")
+
     print("triger 0"); 
     print("{}".format(GPIO_TRIGGER_mid))
     StartTime = time.monotonic()
