@@ -140,7 +140,8 @@ def distance_mid():
     # set Trigger to HIGH
     print("distance_mid function start!!")
     GPIO.output(GPIO_TRIGGER_mid, 1)
-    print("{}".format(GPIO_TRIGGER_mid))
+    
+    print("triger 1"); 
     # set Trigger after 0.01ms to LOW
     while True:
         current_time = time.monotonic()
@@ -150,13 +151,14 @@ def distance_mid():
 
     GPIO.output(GPIO_TRIGGER_mid, 0)
     
+    print("triger 0"); 
     print("{}".format(GPIO_TRIGGER_mid))
     StartTime = time.monotonic()
     StopTime = time.monotonic()
     
     # save StartTime
     
-    if GPIO.input(GPIO_ECHO_mid) == 0:
+    while GPIO.input(GPIO_ECHO_mid) == 0:
         StartTime = time.monotonic()
         print("{}".format(StartTime))
         print("starttime_finish")
@@ -164,7 +166,7 @@ def distance_mid():
        
     print("a")
     # save time of arrival
-    while GPIO.input(GPIO_ECHO_mid) == 1:
+    if GPIO.input(GPIO_ECHO_mid) == 1:
         StopTime = time.monotonic()
         print("endtime_finish")
     
