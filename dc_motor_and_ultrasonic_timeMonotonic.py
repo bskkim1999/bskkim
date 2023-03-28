@@ -149,8 +149,8 @@ def distance_mid():
             start_time=current_time
             break
     while True:
-        
-                    
+        print("abc")
+
     GPIO.output(GPIO_TRIGGER_mid, 0)
     
     print("triger 0"); 
