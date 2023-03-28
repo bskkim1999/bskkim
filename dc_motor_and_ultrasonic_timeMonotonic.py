@@ -161,7 +161,7 @@ def distance_mid():
     
     # save StartTime
     
-    while GPIO.input(GPIO_ECHO_mid) == 0:
+    if GPIO.input(GPIO_ECHO_mid) == 0:
         StartTime = time.monotonic()
         
         
