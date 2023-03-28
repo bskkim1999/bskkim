@@ -152,8 +152,7 @@ def distance_mid():
 
     GPIO.output(GPIO_TRIGGER_mid, 0)
     
-    while True:
-        print("abc")
+    
 
     print("triger 0"); 
     print("{}".format(GPIO_TRIGGER_mid))
@@ -164,6 +163,9 @@ def distance_mid():
     
     while GPIO.input(GPIO_ECHO_mid) == 0:
         StartTime = time.monotonic()
+        while True:
+            print("abc")
+        
         print("{}".format(StartTime))
         print("starttime_finish")
 
