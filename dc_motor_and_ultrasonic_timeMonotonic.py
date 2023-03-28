@@ -362,7 +362,7 @@ while True:
         #wherego=0
         #print("abc")
         
-        print ("Mid = %.1f cm" % mid, end=" " )
+        #print ("Mid = %.1f cm" % mid, end=" " )
         #print ("left = %.1f cm" % left, end=" " )
         #print ("right = %.1f cm" % right )
         
