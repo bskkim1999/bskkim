@@ -245,6 +245,8 @@ def distance_right():
     # save StartTime
     while GPIO.input(GPIO_ECHO_right) == 0:
         StartTime = time.monotonic()
+        print("{}".format(StartTime))
+        print("starttime_finish")
         
     
     # save time of arrival
