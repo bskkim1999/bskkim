@@ -25,9 +25,9 @@ while True:
 
             time.sleep(5)
         """
-        GPIO.output(pin, HIGH)
+        GPIO.output(pin, 1)
         time.sleep(1)
-        GPIO.output(pin, LOW)
+        GPIO.output(pin, 0)
         time.sleep(1)
 
 
