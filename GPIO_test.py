@@ -23,14 +23,14 @@ while True:
         #pwm
         
         for i in range(0,101,5):
-            print("{}".format(i))
+            print("1:{}".format(i))
             pin_pwm.ChangeDutyCycle(i)
 
             time.sleep(3)
 
         for p in range(0,101,10):
             pin_pwm2.ChangeDutyCycle(p)
-
+            print("2:{}".format(i))
             time.sleep(2)
 
         
