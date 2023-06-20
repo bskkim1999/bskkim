@@ -30,7 +30,7 @@ while True:
 
         for p in range(0,101,10):
             pin_pwm2.ChangeDutyCycle(p)
-            print("2:{}".format(i))
+            print("2:{}".format(p))
             time.sleep(2)
 
         
