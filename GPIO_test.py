@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-pin = 2
+pin = 21
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
