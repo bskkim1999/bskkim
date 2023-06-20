@@ -8,7 +8,7 @@ GPIO.setwarnings(False)
 
 GPIO.setup(pin, GPIO.OUT)
 
-pin_pwm = GPIO.PWM(pin, 500)  #(pin, frequency)
+pin_pwm = GPIO.PWM(pin, 100)  #(pin, frequency)
 
 
 pin_pwm.start(0)    #(dutycycle)
@@ -24,7 +24,7 @@ while True:
             print("{}".format(i))
             pin_pwm.ChangeDutyCycle(i)
 
-            time.sleep(1)
+            time.sleep(10)
         
 
 
