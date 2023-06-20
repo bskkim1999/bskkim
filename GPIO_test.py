@@ -25,7 +25,7 @@ while True:
 
         i = i+5
 
-        print("pin21:{}".format(i))
+        print("pin21:{}".format(i % 101))
         print("pin2:{}".format((i + 10) % 101))
 
         pin_pwm.ChangeDutyCycle(i)
