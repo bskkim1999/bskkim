@@ -23,15 +23,15 @@ while True:
 
         #pwm
 
-        i = (i+5) % 100
+        i = (i+5) % 105
 
-        print("pin21:{}".format(i % 100))
-        print("pin2:{}".format((i + 10) % 100))
+        print("pin21:{}".format(i % 105))
+        print("pin2:{}".format((i + 10) % 105))
 
         pin_pwm.ChangeDutyCycle(i)
-        pin_pwm2.ChangeDutyCycle((i + 10) % 100)
+        pin_pwm2.ChangeDutyCycle((i + 10) % 105)
 
-        time.sleep(1)
+        time.sleep(0.5)
 
 
 
