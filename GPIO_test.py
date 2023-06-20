@@ -18,11 +18,17 @@ while True:
     try:
 
         #pwm
+        """
         for i in range(0,101,1):
             print("{}".format(i))
             pin_pwm.ChangeDutyCycle(i)
 
             time.sleep(5)
+        """
+        GPIO.output(pin, HIGH)
+        time.sleep(1)
+        GPIO.output(pin, LOW)
+        time.sleep(1)
 
 
     except:
