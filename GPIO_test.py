@@ -15,25 +15,25 @@ pin_pwm2 = GPIO.PWM(pin2, 100)  #(pin, frequency)
 
 pin_pwm.start(0)    #(dutycycle)
 pin_pwm2.start(0)    #(dutycycle)
+i=0
 
 while True:
 
     try:
 
         #pwm
-        
-        for i in range(0,101,5):
-            print("pin21:{}".format(i))
-            print("pin2:{}".format((i+10) % 101))
 
-            pin_pwm.ChangeDutyCycle(i)
-            pin_pwm2.ChangeDutyCycle( (i+10) % 101)
+        i = i+5
 
-            time.sleep(3)
+        print("pin21:{}".format(i))
+        print("pin2:{}".format((i + 10) % 101))
+
+        pin_pwm.ChangeDutyCycle(i)
+        pin_pwm2.ChangeDutyCycle((i + 10) % 101)
+
+        time.sleep(3)
 
 
-
-        
 
 
 
