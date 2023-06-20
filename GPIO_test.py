@@ -20,7 +20,7 @@ while True:
 
         #pwm
         
-        for i in range(0,101,1):
+        for i in range(0,101,5):
             print("{}".format(i))
             pin_pwm.ChangeDutyCycle(i)
 
