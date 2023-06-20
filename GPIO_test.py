@@ -50,5 +50,5 @@ while True:
         #time.sleep(0.1)
 
     except:
-        print(stop!!)
+        print('stop!!')
         GPIO.cleanup()
