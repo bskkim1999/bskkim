@@ -52,5 +52,6 @@ while True:
 
     except:
         print('stop!!')
+        GPIO.output(pin,0)
         GPIO.cleanup()
         exit(1)
