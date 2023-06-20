@@ -1,16 +1,34 @@
 import RPi.GPIO as GPIO
 
+
+pin = 3
+
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
+GPIO.setup(pin, GPIO.OUT)
+pin_pwm = GPIO.PWM(pin, 500)  #(pin, frequency)
 
-for ii in range(0,28):
-    GPIO.setup(ii, GPIO.OUT)
 
+pin_pwm.start(0)    #(dutycycle)
 
 
 while True:
-    for i in range(0, 28):
-        GPIO.output(i, 1)
+    try:
+
+        #pwm
+        for i in range(0,101):
+            print("{}".format(i))
+            pin_pwm.ChangeDutyCycle(i)
+
+            time.sleep(1)
+
+
+    except:
+        print("finish!!")
+        GPIO.cleanup()
+        pin_pwm.stop()
+
+        exit(1)
 
 
