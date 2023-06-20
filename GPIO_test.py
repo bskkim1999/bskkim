@@ -14,6 +14,7 @@ pin_pwm.start(0)    #(dutycycle)
 
 
 while True:
+
     try:
 
         #pwm
