@@ -41,9 +41,12 @@ while True:
 """
 
 while True:
+    try:
     GPIO.output(pin, 1)
    # time.sleep(0.1)
 
     #GPIO.output(pin, 0)
     #time.sleep(0.1)
 
+    except:
+    GPIO.cleanup()
