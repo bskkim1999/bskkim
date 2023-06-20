@@ -41,9 +41,9 @@ while True:
 """
 
 while True:
-    GPIO.output(1)
+    GPIO.output(pin, 1)
     time.sleep(1)
 
-    GPIO.output(0)
+    GPIO.output(pin, 0)
     time.sleep(1)
 
