@@ -31,7 +31,7 @@ while True:
         pin_pwm.ChangeDutyCycle(i)
         pin_pwm2.ChangeDutyCycle((i + 10) % 101)
 
-        time.sleep(3)
+        time.sleep(1)
 
 
 
