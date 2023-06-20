@@ -44,11 +44,13 @@ while True:
     try:
         print('start!')
         GPIO.output(pin, 1)
-        time.sleep(0.1)
 
-        GPIO.output(pin, 0)
-        time.sleep(0.1)
+        #time.sleep(0.1)
+
+        #GPIO.output(pin, 0)
+        #time.sleep(0.1)
 
     except:
         print('stop!!')
         GPIO.cleanup()
+        exit(1)
