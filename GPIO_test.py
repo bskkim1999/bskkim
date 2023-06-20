@@ -24,7 +24,7 @@ while True:
             print("{}".format(i))
             pin_pwm.ChangeDutyCycle(i)
 
-            time.sleep(10)
+            time.sleep(3)
         
 
 
