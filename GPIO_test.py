@@ -34,7 +34,7 @@ while True:
         while True:
 
             current_time = time.monotonic()
-            if current_time - start_time >= 0.01:
+            if current_time - start_time >= 0.5:
                 start_time = current_time
                 break
 
