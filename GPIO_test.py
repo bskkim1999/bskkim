@@ -26,19 +26,11 @@ while True:
         #pwm
 
         GPIO.output(pin, 0)
-
+        time.sleep(0.00001)
         GPIO.output(pin, 1)
-        # set Trigger after 0.01ms to LOW
-        start_time = time.monotonic()
+        time.sleep(0.00001)
 
-        while True:
 
-            current_time = time.monotonic()
-            if current_time - start_time >= 0.5:
-                start_time = current_time
-                break
-
-        GPIO.output(pin, 0)
 
 
         #time.sleep(0.1)
