@@ -31,7 +31,7 @@ while True:
 
         while True:
             current_time = time.monotonic()
-            if current_time - start_time_right >= 0.00001:
+            if current_time - start_time_right >= 0.01:
                 break
 
         GPIO.output(pin, 0)
