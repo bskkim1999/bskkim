@@ -1,19 +1,19 @@
 import RPi.GPIO as GPIO
 import time
 
-#pin = 21
+pin = 21
 pin2 =  3
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
-#GPIO.setup(pin, GPIO.OUT)
+GPIO.setup(pin, GPIO.OUT)
 GPIO.setup(pin2, GPIO.OUT)
 
-#pin_pwm = GPIO.PWM(pin, 100)  #(pin, frequency)
+pin_pwm = GPIO.PWM(pin, 100)  #(pin, frequency)
 pin_pwm2 = GPIO.PWM(pin2, 70)  #(pin, frequency)
 
-#pin_pwm.start(0)    #(dutycycle)
+pin_pwm.start(0)    #(dutycycle)
 pin_pwm2.start(0)    #(dutycycle)
 i=0
 
@@ -25,10 +25,10 @@ while True:
 
         i = (i+5) % 105 #0 ~ 100
 
-        #print("pin21:{}".format(i % 105))
+        print("pin21:{}".format(i % 105))
         print("pin2:{}".format(i))
 
-        #pin_pwm.ChangeDutyCycle(i)
+        pin_pwm.ChangeDutyCycle(i)
         pin_pwm2.ChangeDutyCycle(i)
 
         time.sleep(0.5)
@@ -40,9 +40,9 @@ while True:
     except:
         print("finish!!")
         GPIO.cleanup()
-        #GPIO.output(pin, 0)
+        GPIO.output(pin, 0)
         GPIO.output(pin2, 0)
-        #pin_pwm.stop()
+        pin_pwm.stop()
         pin_pwm2.stop()
         exit(1)
 
