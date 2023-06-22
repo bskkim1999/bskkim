@@ -23,6 +23,22 @@ while True:
 
         #pwm
 
+        GPIO.output(pin, 0)
+
+        GPIO.output(pin, 1)
+        # set Trigger after 0.01ms to LOW
+        start_time_right = time.monotonic()
+
+        while True:
+            current_time = time.monotonic()
+            if current_time - start_time_right >= 0.00001:
+                break
+
+        GPIO.output(pin, 0)
+
+
+        time.sleep(0.1)
+        """
         i = (i+5) % 105 #0 ~ 100
         i2 = ( i2 + 10) % 105
 
@@ -33,7 +49,7 @@ while True:
         pin_pwm2.ChangeDutyCycle(i2)
 
         time.sleep(0.5)
-
+        """
 
 
 
