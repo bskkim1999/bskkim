@@ -37,7 +37,7 @@ while True:
         GPIO.output(pin, 0)
 
 
-        time.sleep(0.1)
+        #time.sleep(0.1)
         """
         i = (i+5) % 105 #0 ~ 100
         i2 = ( i2 + 10) % 105
