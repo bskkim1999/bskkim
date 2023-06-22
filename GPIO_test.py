@@ -29,7 +29,7 @@ while True:
         print("pin2:{}".format(i))
 
         pin_pwm.ChangeDutyCycle(i)
-        pin_pwm2.ChangeDutyCycle(i)
+        pin_pwm2.ChangeDutyCycle( (i*2) % 105)
 
         time.sleep(0.5)
 
