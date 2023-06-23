@@ -73,8 +73,9 @@ while True:
 
     except:
         print("finish!!")
-        GPIO.cleanup()
         GPIO.output(pin, 0)
+        GPIO.cleanup()
+        
         #GPIO.output(pin2, 0)
         #pin_pwm.stop()
         #pin_pwm2.stop()
