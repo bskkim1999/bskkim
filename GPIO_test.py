@@ -43,7 +43,7 @@ while True:
                 break
 
         GPIO.output(pin, 0)
-        time.sleep(0.00001)
+        #time.sleep(0.00001)
 
         """
         GPIO.output(pin, 0)
