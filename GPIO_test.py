@@ -10,10 +10,10 @@ GPIO.setwarnings(False)
 GPIO.setup(pin, GPIO.OUT)
 #GPIO.setup(pin2, GPIO.OUT)
 
-pin_pwm = GPIO.PWM(pin, 100)  #(pin, frequency)
+#pin_pwm = GPIO.PWM(pin, 100)  #(pin, frequency)
 #pin_pwm2 = GPIO.PWM(pin2, 100)  #(pin, frequency)
 
-pin_pwm.start(0)    #(dutycycle)
+#pin_pwm.start(0)    #(dutycycle)
 #pin_pwm2.start(0)    #(dutycycle)
 
 i=0
