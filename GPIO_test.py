@@ -25,7 +25,7 @@ while True:
     try:
 
         #pwm
-
+        """
         start_time = 0
 
         # set Trigger to HIGH
@@ -44,13 +44,14 @@ while True:
 
         GPIO.output(pin, 0)
         time.sleep(0.00001)
+        """
 
-        """
+
         GPIO.output(pin, 0)
-        time.sleep(0.00001)
+        time.sleep(0.01)
         GPIO.output(pin, 1)
-        time.sleep(0.00001)
-        """
+        time.sleep(0.01)
+
 
 
 
