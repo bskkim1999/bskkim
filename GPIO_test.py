@@ -25,9 +25,9 @@ while True:
     try:
 
         GPIO.output(pin, 0)
-        time.sleep(0.00001)
+        time.sleep(0.0001)
         GPIO.output(pin, 1)
-        time.sleep(0.00001)
+        time.sleep(0.0001)
 
     except:
         print("interrupt!!!!!!!!!")
