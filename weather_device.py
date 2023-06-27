@@ -24,7 +24,7 @@ while True:
                 low = list(location.select("tmn"))
                 high = list(location.select("tmx"))
 
-                weather_list = [item1.strip('<wf>').strip('</wf>') for item1 in weather]
+                weather_list = [item1.text for item1 in weather]
                 low_list = [int(''.join(filter(str.isdigit, item2))) for item2 in low]
                 high_list = [int(''.join(filter(str.isdigit, item3))) for item3 in high]
 
