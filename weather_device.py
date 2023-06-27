@@ -6,7 +6,7 @@ import time
 while True:
     try:
         target = request.urlopen("https://www.kma.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=159")
-        soup = BeautifulSoup(target, 'html.parser') #data 불러옴
+        soup = BeautifulSoup(target, 'xml') #data 불러옴
 
         #print(soup)
 
@@ -25,12 +25,13 @@ while True:
                 high = list(location.select("tmx"))
 
                 weather_list = [item1.strip('<wf>').strip('</wf>') for item1 in weather]
-                #low_list = [int(''.join(filter(str.isdigit, item2))) for item2 in low]
-                #high_list = [int(''.join(filter(str.isdigit, item3))) for item3 in high]
+                low_list = [int(''.join(filter(str.isdigit, item2))) for item2 in low]
+                high_list = [int(''.join(filter(str.isdigit, item3))) for item3 in high]
 
-                print(weather)
-                #print(low)
-                #print(high)
+                print(weather_list)
+                print(low_list)
+                print(high_list)
+
 
     except:
         print("finish!!")
